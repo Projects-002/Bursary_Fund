@@ -78,7 +78,7 @@
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
-                      <div class="btn btn-primary text-white">Get Started</div>
+                      <div class="btn btn-primary text-white" onclick="window.location='auth/signin.php'" >Get Started</div>
                 </div>
             </div>
         </nav>
