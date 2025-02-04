@@ -5,7 +5,7 @@ Use Dotenv\Dotenv;// Import Dotenv classes into the global namespace
 
 // Load Composer's autoloader
 include '../vendor/autoload.php';
-require_once '../Database/db.php';
+// require_once '../Database/db.php';
 
 // Start the session
 session_start();
