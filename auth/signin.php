@@ -1,7 +1,34 @@
+<?php
+use PHPMailer\PHPMailer\PHPMailer;// Import PHPMailer classes into the global namespace
+use PHPMailer\PHPMailer\Exception;// Import PHPMailer classes into the global namespace
+Use Dotenv\Dotenv;// Import Dotenv classes into the global namespace
+
+// Load Composer's autoloader
+include '../vendor/autoload.php';
+require_once '../Database/db.php';
+
+// Start the session
+session_start();
+
+// Load environment variables
+$dotenv = Dotenv::createImmutable('../');
+$dotenv->load();
+
+// Signin With Google Account Start
+$client = new Google\Client;
+
+$client ->setClientId($_ENV['GOOGLE_CLIENT_ID']);
+$client->setClientSecret($_ENV['GOOGLE_CLIENT_SECRET']);
+$client->setRedirectUri($_ENV['GOOGLE_REDIRECT_URI']);
+
+$client->addScope("email");
+$client->addScope("profile");
+
+$url = $client->createAuthUrl();
+// Google Auth End
 
 
-
-
+?>
 
 <!DOCTYPE html>
 <html lang="en">
