@@ -1,9 +1,35 @@
-  =>  Template Name    : Finanza - Financial Services Website Template
+**Import Using composer**
 
-  =>  Template Link    : https://htmlcodex.com/financial-services-website-template
 
-  =>  Template License : https://htmlcodex.com/license (or read the LICENSE.txt file)
+1. Get the Following credentials
 
-  =>  Template Author  : HTML Codex
+     c)GoogleAuth
+         - SecretKey
+         - ClientID
+         -ClientURI
+         =>  https://console.cloud.google.com/
 
-  =>  Author Website   : https://htmlcodex.com
+
+
+
+
+2. Run the Following Commands Via Composer (Install PHP composer if you dont have via https://getcomposer.org/download/ )
+
+```
+composer require google/apiclient
+
+composer search phpdotenv   
+composer require vlucas/phpdotenv
+
+composer search guzzle
+composer require guzzlehttp/guzzle
+
+```
+
+#PHP MAILER
+
+```
+composer require phpMailer/phpMailer
+
+```
+
