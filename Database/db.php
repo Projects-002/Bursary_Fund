@@ -2,7 +2,7 @@
 
     $db_server = 'localhost';
     $db_user = 'root';
-    $db_pass = '22092209';
+    $db_pass = '';
     $db_name = 'scholarease';
     $conn = '';
 

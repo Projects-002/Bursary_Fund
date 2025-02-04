@@ -43,12 +43,12 @@
     <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
             <div class="col-lg-6 px-5 text-start">
-                <small><i class="fa fa-map-marker-alt text-primary me-2"></i>123 Street, New York, USA</small>
-                <small class="ms-4"><i class="fa fa-clock text-primary me-2"></i>9.00 am - 9.00 pm</small>
+                <small><i class="fa fa-map-marker-alt text-primary me-2"></i>65, NAKURU, KENYA</small>
+                <small class="ms-4"><i class="fa fa-clock text-primary me-2"></i>8.00 am - 5.00 pm</small>
             </div>
             <div class="col-lg-6 px-5 text-end">
-                <small><i class="fa fa-envelope text-primary me-2"></i>info@example.com</small>
-                <small class="ms-4"><i class="fa fa-phone-alt text-primary me-2"></i>+012 345 6789</small>
+                <small><i class="fa fa-envelope text-primary me-2"></i>alexkipchirchir927@gmail.com</small>
+                <small class="ms-4"><i class="fa fa-phone-alt text-primary me-2"></i>+254713869060</small>
             </div>
         </div>
 
@@ -169,9 +169,9 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Our Office</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>65 , NAKURU, KENYA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+254713869060</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>alexkipchirchir927@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
