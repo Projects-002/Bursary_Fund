@@ -31,5 +31,9 @@ composer require guzzlehttp/guzzle
 ```
 composer require phpMailer/phpMailer
 
+composer install
+
+composer update --ignore-platform-reqs
+
 ```
 

@@ -83,7 +83,7 @@ $url = $client->createAuthUrl();
         <div class="card shadow-lg p-4" style="width: 100%; max-width: 400px;">
         
             <!-- Logo -->
-             <p class="text-center">PortfolioReady</p>
+             <p class="text-center">SCHOLAREASE</p>
              <!-- <div class="logo  d-flex justify-content-center align-items-center container p-0" style="background-image:url('../assets/images/gree.png');"></div> -->
             <h2 class="text-center font-weight-bold mb-4">Sign In</h2>
             
