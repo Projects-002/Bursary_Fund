@@ -181,8 +181,8 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Services</h4>
-                    <a class="btn btn-link" href="">Financial Planning</a>
-                    <a class="btn btn-link" href="">Cash Investment</a>
+                    <a class="btn btn-link" href="">User friendly platform for bursary application</a>
+                    <a class="btn btn-link" href=""></a>
                     <a class="btn btn-link" href="">Financial Consultancy</a>
                     <a class="btn btn-link" href="">Business Loans</a>
                     <a class="btn btn-link" href="">Business Analysis</a>

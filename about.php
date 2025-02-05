@@ -44,11 +44,11 @@
         <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
             <div class="col-lg-6 px-5 text-start">
                 <small><i class="fa fa-map-marker-alt text-primary me-2"></i>65 ,NAKURU, KENYA</small>
-                <small class="ms-4"><i class="fa fa-clock text-primary me-2"></i>9.00 am - 9.00 pm</small>
+                <small class="ms-4"><i class="fa fa-clock text-primary me-2"></i>8.00 am - 5.00 pm</small>
             </div>
             <div class="col-lg-6 px-5 text-end">
-                <small><i class="fa fa-envelope text-primary me-2"></i>info@example.com</small>
-                <small class="ms-4"><i class="fa fa-phone-alt text-primary me-2"></i>+012 345 6789</small>
+                <small><i class="fa fa-envelope text-primary me-2"></i>alexkipchirchir927@gmail.com</small>
+                <small class="ms-4"><i class="fa fa-phone-alt text-primary me-2"></i>+254713869060</small>
             </div>
         </div>
 
@@ -84,7 +84,7 @@
                         <small class="fab fa-twitter text-primary"></small>
                     </a>
                     <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="">
-                        <small class="fab fa-linkedin-in text-primary"></small>
+                        <small class="fab fa-linkedin-in text-primary" ><a href="https://www.linkedin.com/in/alex-kipchirchir-4431572a1/"></a></small>
                     </a>
                 </div>
             </div>
@@ -118,8 +118,8 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">About Us</p>
-                    <h1 class="display-5 mb-4">We Help Our Clients To Grow Their Business</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <h1 class="display-5 mb-4">We students to Achieve their education </h1>
+                    <p class="mb-4">We are commited to supporting students in Achieving their academic dreams by providing Accesible bursary Opportunities and a seamless application process</p>
                     <div class="border rounded p-4">
                         <nav>
                             <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
