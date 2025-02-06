@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>ScholarEase - Financial Services Website </title>
+    <title>ScholarEase </title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -115,8 +115,9 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Why Choosing Us!</p>
-                    <h1 class="display-5 mb-4">Few Reasons Why People Choosing Us!</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <h1 class="display-5 mb-4">Reasons Why People Choosing Us!</h1>
+                    <p class="mb-4">Access to education is a fundamental right, yet many students struggle to afford tuition and other academic expenses.
+                         Bursary funds play a crucial role in bridging this gap by providing financial assistance to deserving students</p>
                     <a class="btn btn-primary py-3 px-5" href="">Explore More</a>
                 </div>
                 <div class="col-lg-6">
