@@ -213,26 +213,26 @@
             <div class="row g-5">
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
                     <i class="fa fa-users fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                    <span class="fs-5 text-white">Happy Clients</span>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">15234</h1>
+                    <span class="fs-5 text-white">Empowering Future Leaders</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
                     <i class="fa fa-check fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                    <span class="fs-5 text-white">Projects Completed</span>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">1</h1>
+                    <span class="fs-5 text-white">Launching Our First Bursary Cycle</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
                     <i class="fa fa-users-cog fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                    <span class="fs-5 text-white">Dedicated Staff</span>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">124</h1>
+                    <span class="fs-5 text-white">Passionate Team Committed to Your Success</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
                     <i class="fa fa-award fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                    <span class="fs-5 text-white">Awards Achieved</span>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">15234</h1>
+                    <span class="fs-5 text-white">Building a Legacy of Support</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
             </div>
@@ -251,39 +251,42 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item">
-                        <img class="img-fluid rounded" src="img/team-1.jpg" alt="">
+                        <img class="img-fluid rounded" src="img\GOK.png" alt="">
                         <div class="team-text">
-                            <h4 class="mb-0">Kate Winslet</h4>
+                            <h4 class="mb-0">Government of Kenya</h4>
                             <div class="team-social d-flex">
                                 <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
-                        <img class="img-fluid rounded" src="img/team-2.jpg" alt="">
+                        <img class="img-fluid rounded" src="img\Screenshot_2.png" alt="">
                         <div class="team-text">
-                            <h4 class="mb-0">Jac Jacson</h4>
+                            <h4 class="mb-0">JOSEPH TONUI</h4>
                             <div class="team-social d-flex">
                                 <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                
+                                
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item">
-                        <img class="img-fluid rounded" src="img/team-3.jpg" alt="">
+                        <img class="img-fluid rounded" src="img\alex.png" alt="">
                         <div class="team-text">
-                            <h4 class="mb-0">Doris Jordan</h4>
+                            <h4 class="mb-0">ALEX KIPCHIRCHIR</h4>
                             <div class="team-social d-flex">
                                 <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
+                                
                                 <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-square btn-outline-light rounded-circle me-2" href="https://www.linkedin.com/in/
+                                alex-kipchirchir-4431572a1
+" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
                             </div>
                         </div>
                     </div>
@@ -301,37 +304,38 @@
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Our Office</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>65 ,NAKURU, KENYA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+25471869060</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>alexkipchirchir927@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                        
+                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href="https://www.linkedin.com/company/ngcdf/
+" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Services</h4>
-                    <a class="btn btn-link" href="">Financial Planning</a>
-                    <a class="btn btn-link" href="">Cash Investment</a>
-                    <a class="btn btn-link" href="">Financial Consultancy</a>
-                    <a class="btn btn-link" href="">Business Loans</a>
-                    <a class="btn btn-link" href="">Business Analysis</a>
+                  <li>  <a>opportunities</a></li>
+                   <li> <a>realtime tracking</a></li>
+                   <li> <a>secure document submissiion and verification</a></li>
+                    
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Quick Links</h4>
                     <a class="btn btn-link" href="">About Us</a>
                     <a class="btn btn-link" href="">Contact Us</a>
                     <a class="btn btn-link" href="">Our Services</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    
                     <a class="btn btn-link" href="">Support</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <h4 class="text-white mb-4">Stay Updated</h4>
+                    <p>Join our community of future leaders! Stay updated on program news, connect with past recipients, 
+                        and learn about upcoming events and initiatives.</p>
                     <div class="position-relative w-100">
-                        <input class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        <input class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email to ">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Stay updated</button>
                     </div>
                 </div>
             </div>
@@ -345,11 +349,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                    &copy; <a class="border-bottom" href="#">alexkipchirchir</a>    All Right Reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <!--/*** This  is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the  without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                    Designed By <a>ALEX KIPCHIRCHIR</a>
                 </div>
             </div>
         </div>
