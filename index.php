@@ -139,12 +139,13 @@
         <div class="container">
             <div class="row g-4 align-items-end mb-4">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <img class="img-fluid rounded" src="img/about.jpg">
+                    <img class="img-fluid rounded" src="img\Screenshot_1.png">
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">About Us</p>
-                    <h1 class="display-5 mb-4">We Help Our Clients To Grow Their Business</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <h1 class="display-5 mb-4">We Help students in achieving their academic Goals</h1>
+                    <p class="mb-4">We believe that financial constraints should not be a barrier to academic success.  Our bursary program provides financial assistance 
+                        to eligible students based on academic merit, financial need</p>
                     <div class="border rounded p-4">
                         <nav>
                             <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
@@ -155,16 +156,20 @@
                         </nav>
                         <div class="tab-content" id="nav-tabContent">
                             <div class="tab-pane fade show active" id="nav-story" role="tabpanel" aria-labelledby="nav-story-tab">
-                                <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.</p>
-                                <p class="mb-0">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit</p>
+                                <p>The Bursary Fund  was founded in 2010 by H.E MWAI KIBAKI, a passionate advocate for education.</p>
+                                <p class="mb-0">Recognizing the financial barriers faced by many talented students in UNIVERSITY H.E MWAI KIBAKI
+                                established this bursary to provide opportunities for deserving individuals to pursue their higher education dreams</p>
                             </div>
                             <div class="tab-pane fade" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
-                                <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.</p>
-                                <p class="mb-0">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit</p>
+                                <p>Our mission is to simplify and enhance the bursary application process by providing a secure,
+                                transparent, and user-friendly online platform</p>
+                                <p class="mb-0">With this system, applicants can easily submit their requests, 
+                                track their progress, and receive timely notifications, while organizations can manage and review applications effortlessly</p>
                             </div>
                             <div class="tab-pane fade" id="nav-vision" role="tabpanel" aria-labelledby="nav-vision-tab">
-                                <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.</p>
-                                <p class="mb-0">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit</p>
+                                <p>To become a leading digital platform that revolutionizes the bursary application process by ensuring efficiency, transparency, and accessibility</p>
+                                <p class="mb-0"> We envision a future where every deserving student has seamless access to financial aid,
+                                empowering them to pursue their education without financial barriers</p>
                             </div>
                         </div>
                     </div>
@@ -176,11 +181,12 @@
                         <div class="h-100">
                             <div class="d-flex">
                                 <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
-                                    <i class="fa fa-times text-white"></i>
+                                    <!--<i class="fa fa-times text-white"></i> -->
                                 </div>
                                 <div class="ps-3">
-                                    <h4>No Hidden Cost</h4>
-                                    <span>Clita erat ipsum lorem sit sed stet duo justo</span>
+                                    <h4>Tranparent Funding</h4>
+                                    <span>Our application and selection process is open and straightforward.
+                                         We believe in fairness and accessibility for all applicants</span>
                                 </div>
                                 <div class="border-end d-none d-lg-block"></div>
                             </div>
@@ -195,7 +201,7 @@
                                 </div>
                                 <div class="ps-3">
                                     <h4>Dedicated Team</h4>
-                                    <span>Clita erat ipsum lorem sit sed stet duo justo</span>
+                                    <span>We believe that everyone deserves access to quality education, and we're dedicated to making that a reality</span>
                                 </div>
                                 <div class="border-end d-none d-lg-block"></div>
                             </div>
@@ -210,7 +216,8 @@
                                 </div>
                                 <div class="ps-3">
                                     <h4>24/7 Available</h4>
-                                    <span>Clita erat ipsum lorem sit sed stet duo justo</span>
+                                    <span>edicated helpline:0713869060<br><br>
+                                    Support email: <a href="mailto:user.alexkipchirchir927@gmail.com">Contact Us</span>
                                 </div>
                             </div>
                         </div>
@@ -228,26 +235,26 @@
             <div class="row g-5">
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
                     <i class="fa fa-users fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                    <span class="fs-5 text-white">Happy Clients</span>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">15234</h1>
+                    <span class="fs-5 text-white">Empowering Future Leaders</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
                     <i class="fa fa-check fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                    <span class="fs-5 text-white">Projects Completed</span>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">1</h1>
+                    <span class="fs-5 text-white">Launching Our First Bursary Cycle</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
                     <i class="fa fa-users-cog fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                    <span class="fs-5 text-white">Dedicated Staff</span>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">124</h1>
+                    <span class="fs-5 text-white">Passionate Team Committed to Your Success</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
                 <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
                     <i class="fa fa-award fa-3x text-white mb-3"></i>
-                    <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                    <span class="fs-5 text-white">Awards Achieved</span>
+                    <h1 class="display-4 text-white" data-toggle="counter-up">15234</h1>
+                    <span class="fs-5 text-white">Building a Legacy of Support</span>
                     <hr class="bg-white w-25 mx-auto mb-0">
                 </div>
             </div>

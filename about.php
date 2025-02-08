@@ -137,7 +137,7 @@
                             </div>
                             <div class="tab-pane fade" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
                                 <p>Our mission is to simplify and enhance the bursary application process by providing a secure,
-                                     transparent, and user-friendly online platform..</p>
+                                     transparent, and user-friendly online platform.</p>
                                 <p class="mb-0">We aim to ensure that deserving students can easily access financial aid opportunities 
                                     while enabling institutions to manage applications efficiently</p>
                             </div>
