@@ -281,17 +281,18 @@
                                 <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
                                     <div class="feature-box border rounded p-4">
                                         <i class="fa fa-check fa-3x text-primary mb-3"></i>
-                                        <h4 class="mb-3">Fast Executions</h4>
-                                        <p class="mb-3">Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
-                                        <a class="fw-semi-bold" href="">Read More <i class="fa fa-arrow-right ms-1"></i></a>
+                                        <h4 class="mb-3">Easy Application</h4>
+                                        <p class="mb-3">Our intuitive online forms and clear instructions make applying 
+                                            for a bursary quick and straightforward</p>
+                                       <!-- <a class="fw-semi-bold" href="">Read More <i class="fa fa-arrow-right ms-1"></i></a> -->
                                     </div>
                                 </div>
                                 <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
                                     <div class="feature-box border rounded p-4">
                                         <i class="fa fa-check fa-3x text-primary mb-3"></i>
-                                        <h4 class="mb-3">Guide & Support</h4>
-                                        <p class="mb-3">Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
-                                        <a class="fw-semi-bold" href="">Read More <i class="fa fa-arrow-right ms-1"></i></a>
+                                        <h4 class="mb-3">Track Your Application</h4>
+                                        <p class="mb-3">Log in anytime to see the status of your application, from submission to review and decision</p>
+                                        <!--<a class="fw-semi-bold" href="">Read More <i class="fa fa-arrow-right ms-1"></i></a> -->
                                     </div>
                                 </div>
                             </div>
@@ -299,9 +300,9 @@
                         <div class="col-md-6 wow fadeIn" data-wow-delay="0.7s">
                             <div class="feature-box border rounded p-4">
                                 <i class="fa fa-check fa-3x text-primary mb-3"></i>
-                                <h4 class="mb-3">Financial Secure</h4>
-                                <p class="mb-3">Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet</p>
-                                <a class="fw-semi-bold" href="">Read More <i class="fa fa-arrow-right ms-1"></i></a>
+                                <h4 class="mb-3">Efficient Management</h4>
+                                <p class="mb-3">Our system streamlines the entire bursary process, allowing administrators to focus on selecting deserving candidates</p>
+                               <!--<a class="fw-semi-bold" href="">Read More <i class="fa fa-arrow-right ms-1"></i></a> -->
                             </div>
                         </div>
                     </div>
@@ -317,22 +318,22 @@
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Our Services</p>
-                <h1 class="display-5 mb-5">Awesome Financial Services For Business</h1>
+                <h1 class="display-5 mb-5">Awesome Application and Tracking</h1>
             </div>
             <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="col-lg-4">
                     <div class="nav nav-pills d-flex justify-content-between w-100 h-100 me-4">
                         <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-4 active" data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Financial Planning</h5>
+                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Easy Application Process</h5>
                         </button>
                         <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-2" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Cash Investment</h5>
+                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Real-time Application Tracking</h5>
                         </button>
                         <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-3" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Financial Consultancy</h5>
+                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Direct Communication</h5>
                         </button>
                         <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-0" data-bs-toggle="pill" data-bs-target="#tab-pane-4" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Business Loans</h5>
+                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Secure Data Management</h5>
                         </button>
                     </div>
                 </div>
@@ -342,16 +343,17 @@
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute rounded w-100 h-100" src="img/service-1.jpg"
+                                        <img class="position-absolute rounded w-100 h-100" src="img\servicej.png"
                                             style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <h3 class="mb-4">25 Years Of Experience In Financial Support</h3>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet.</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Secured Loans</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Credit Facilities</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Cash Advanced</p>
+                                    <p class="mb-4">We believe that access to education is key to unlocking potential. Our bursary management system empowers educational institutions 
+                                        and organizations to efficiently manage their funds and maximize their impact on students' lives..</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Simplifying Bursary Management</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Empowering Education Through Efficient Bursary Solutions</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Streamlining Bursary Applications & Administrationd</p>
                                     <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
                                 </div>
                             </div>
@@ -360,16 +362,19 @@
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute rounded w-100 h-100" src="img/service-2.jpg"
+                                        <img class="position-absolute rounded w-100 h-100" src="img\service2j.png"
                                             style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <h3 class="mb-4">25 Years Of Experience In Financial Support</h3>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet.</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Secured Loans</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Credit Facilities</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Cash Advanced</p>
+                                    <p class="m</p>
+                                    <p class="m</p>
+                                    <p class="mb-4">We believe that access to education is key to unlocking potential. Our bursary management system empowers educational institutions and organizations to efficiently 
+                                        manage their funds and maximize their impact on students' lives.</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Simplifying Bursary Management</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Empowering Education Through Efficient Bursary Solutions</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Streamlining Bursary Applications & Administrationd</p>
                                     <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
                                 </div>
                             </div>
@@ -378,16 +383,17 @@
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute rounded w-100 h-100" src="img/service-3.jpg"
+                                        <img class="position-absolute rounded w-100 h-100" src="img\service3j.png"
                                             style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <h3 class="mb-4">25 Years Of Experience In Financial Support</h3>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet.</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Secured Loans</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Credit Facilities</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Cash Advanced</p>
+                                    <p class="mb-4">We believe that access to education is key to unlocking potential. Our bursary management system empowers educational institutions and organizations to
+                                         efficiently manage their funds and maximize their impact on students' lives..</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Simplifying Bursary Management</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Empowering Education Through Efficient Bursary Solutions</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Streamlining Bursary Applications & Administrationd</p>
                                     <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
                                 </div>
                             </div>
@@ -396,16 +402,17 @@
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute rounded w-100 h-100" src="img/service-4.jpg"
+                                        <img class="position-absolute rounded w-100 h-100" src="img\pexels-tima-miroshnichenko-5380664.jpg"
                                             style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <h3 class="mb-4">25 Years Of Experience In Financial Support</h3>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet.</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Secured Loans</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Credit Facilities</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Cash Advanced</p>
+                                    <p class="mb-4">We believe that access to education is key to unlocking potential. Our bursary management system empowers educational institutions and organizations to efficiently
+                                         manage their funds and maximize their impact on students' lives..</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Simplifying Bursary Management</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Empowering Education Through Efficient Bursary Solutions</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Streamlining Bursary Applications & Administrationd</p>
                                     <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
                                 </div>
                             </div>
@@ -475,17 +482,17 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Our Projects</p>
-                <h1 class="display-5 mb-5">We Have Completed Latest Projects</h1>
+             <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Our Projects</p>
+                <h1 class="display-5 mb-5">Your All-in-One Bursary Solution</h1>
             </div>
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.3s">
                 <div class="project-item pe-5 pb-5">
                     <div class="project-img mb-3">
-                        <img class="img-fluid rounded" src="img/service-1.jpg" alt="">
+                        <img class="img-fluid rounded" src="img\S1.png" alt="">
                         <a href=""><i class="fa fa-link fa-3x text-primary"></i></a>
                     </div>
                     <div class="project-title">
-                        <h4 class="mb-0">Financial Planning</h4>
+                        <h4 class="mb-0">Connecting students with funding opportunities seamlessly.</h4>
                     </div>
                 </div>
                 <div class="project-item pe-5 pb-5">
@@ -494,7 +501,7 @@
                         <a href=""><i class="fa fa-link fa-3x text-primary"></i></a>
                     </div>
                     <div class="project-title">
-                        <h4 class="mb-0">Cash Investment</h4>
+                        <h4 class="mb-0">Empowering education through efficient bursary solutions</h4>
                     </div>
                 </div>
                 <div class="project-item pe-5 pb-5">
@@ -503,7 +510,7 @@
                         <a href=""><i class="fa fa-link fa-3x text-primary"></i></a>
                     </div>
                     <div class="project-title">
-                        <h4 class="mb-0">Financial Consultancy</h4>
+                        <h4 class="mb-0">Real-time Application Tracking</h4>
                     </div>
                 </div>
                 <div class="project-item pe-5 pb-5">
@@ -512,7 +519,7 @@
                         <a href=""><i class="fa fa-link fa-3x text-primary"></i></a>
                     </div>
                     <div class="project-title">
-                        <h4 class="mb-0">Business Loans</h4>
+                        <h4 class="mb-0">Taking the hassle out of bursary administration.</h4>
                     </div>
                 </div>
             </div>
@@ -531,9 +538,9 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="team-item">
-                        <img class="img-fluid rounded" src="img/team-1.jpg" alt="">
+                        <img class="img-fluid rounded" src="img\GOK.png" alt="">
                         <div class="team-text">
-                            <h4 class="mb-0">Kate Winslet</h4>
+                            <h4 class="mb-0">Government of Kenya</h4>
                             <div class="team-social d-flex">
                                 <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -544,9 +551,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item">
-                        <img class="img-fluid rounded" src="img/team-2.jpg" alt="">
+                        <img class="img-fluid rounded" src="img\Screenshot_2.png" alt="">
                         <div class="team-text">
-                            <h4 class="mb-0">Jac Jacson</h4>
+                            <h4 class="mb-0">JOSEPH TONUI</h4>
                             <div class="team-social d-flex">
                                 <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -557,9 +564,9 @@
                 </div>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="team-item">
-                        <img class="img-fluid rounded" src="img/team-3.jpg" alt="">
+                        <img class="img-fluid rounded" src="img\alex.png" alt="">
                         <div class="team-text">
-                            <h4 class="mb-0">Doris Jordan</h4>
+                            <h4 class="mb-0">ALEX KIPCHIRCHIR</h4>
                             <div class="team-social d-flex">
                                 <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                 <a class="btn btn-square rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -575,7 +582,7 @@
 
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5">
+    <!--<div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Testimonial</p>
@@ -630,7 +637,7 @@
         </div>
     </div>
     <!-- Testimonial End -->
-
+-->
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
