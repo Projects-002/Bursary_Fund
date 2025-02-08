@@ -269,9 +269,10 @@
             <div class="row g-5 align-items-center">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Why Choosing Us!</p>
-                    <h1 class="display-5 mb-4">Few Reasons Why People Choosing Us!</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                    <a class="btn btn-primary py-3 px-5" href="">Explore More</a>
+                    <h1 class="display-5 mb-4">Why Use Our System?!</h1>
+                    <p class="mb-4">Welcome to our Bursary Fund Application System! Designed with you in mind, our system offers unmatched benefits and support to ensure your application process is smooth, 
+                        efficient, and stress-free.</p>
+                    <a class="btn btn-primary py-3 px-5" href="">WELCOME</a>
                 </div>
                 <div class="col-lg-6">
                     <div class="row g-4 align-items-center">
