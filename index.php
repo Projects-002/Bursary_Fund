@@ -348,7 +348,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h3 class="mb-4">25 Years Of Experience In Financial Support</h3>
+                                    <h3 class="mb-4">Your all time Financial Support</h3>
                                     <p class="mb-4">We believe that access to education is key to unlocking potential. Our bursary management system empowers educational institutions 
                                         and organizations to efficiently manage their funds and maximize their impact on students' lives..</p>
                                     <p><i class="fa fa-check text-primary me-3"></i>Simplifying Bursary Management</p>
@@ -367,7 +367,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h3 class="mb-4">25 Years Of Experience In Financial Support</h3>
+                                    <h3 class="mb-4">Your all time  Financial Support</h3>
                                     <p class="m</p>
                                     <p class="m</p>
                                     <p class="mb-4">We believe that access to education is key to unlocking potential. Our bursary management system empowers educational institutions and organizations to efficiently 
@@ -388,7 +388,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h3 class="mb-4">25 Years Of Experience In Financial Support</h3>
+                                    <h3 class="mb-4">Your all time Financial Support</h3>
                                     <p class="mb-4">We believe that access to education is key to unlocking potential. Our bursary management system empowers educational institutions and organizations to
                                          efficiently manage their funds and maximize their impact on students' lives..</p>
                                     <p><i class="fa fa-check text-primary me-3"></i>Simplifying Bursary Management</p>
@@ -407,7 +407,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h3 class="mb-4">25 Years Of Experience In Financial Support</h3>
+                                    <h3 class="mb-4">Your all time Financial Support</h3>
                                     <p class="mb-4">We believe that access to education is key to unlocking potential. Our bursary management system empowers educational institutions and organizations to efficiently
                                          manage their funds and maximize their impact on students' lives..</p>
                                     <p><i class="fa fa-check text-primary me-3"></i>Simplifying Bursary Management</p>
@@ -482,7 +482,7 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-             <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Our Projects</p>
+            <!-- <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Our Projects</p> -->
                 <h1 class="display-5 mb-5">Your All-in-One Bursary Solution</h1>
             </div>
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.3s">
@@ -672,11 +672,11 @@
                     <a class="btn btn-link" href="">Support</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <h4 class="text-white mb-4">Announcements</h4>
+                    <p>Stay up-to-date with our latest news and announcements</p>
                     <div class="position-relative w-100">
                         <input class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">To stay updated</button>
                     </div>
                 </div>
             </div>
