@@ -2,8 +2,8 @@
 
     $db_server = 'localhost';
     $db_user = 'root';
-    $db_pass = '';
-    $db_name = 'scholarease';
+    $db_pass = 'alex';
+    $db_name = 'bursary_fund';
     $conn = '';
 
         try{

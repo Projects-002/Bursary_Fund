@@ -1,4 +1,4 @@
-create table users(
+create table Alex(
 SN int auto_increment primary key,
 First_Name varchar(100),
 Last_Name varchar(100),
