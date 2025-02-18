@@ -152,7 +152,7 @@
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 450px;">
                     <div class="position-relative rounded overflow-hidden h-100">
                         <iframe class="position-relative w-100 h-100"
-                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
+                         src="https://www.google.com/maps/place/County+Government+Of+Nakuru/@-0.2863126,36.0635513,17z/data=!4m10!1m2!2m1!1snakuru+county+offices+location!3m6!1s0x18298d82ee10d463:0xba3871222f7a43c6!8m2!3d-0.2856506!4d36.0705184!15sCh5uYWt1cnUgY291bnR5IG9mZmljZXMgbG9jYXRpb26SARFnb3Zlcm5tZW50X29mZmljZeABAA!16s%2Fg%2F11csqc234r?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoASAFQAw%3D%3D"
                         frameborder="0" style="min-height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
                         tabindex="0"></iframe>
                     </div>
@@ -182,7 +182,7 @@
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Services</h4>
                     <a class="btn btn-link" href="">User friendly platform for bursary application</a>
-                    <a class="btn btn-link" href=""></a>
+                    
                     <a class="btn btn-link" href="">Transparent Funding</a>
                     <a class="btn btn-link" href="">realtime tracking</a>
                     
@@ -196,11 +196,11 @@
                     <a class="btn btn-link" href="">Support</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <h4 class="text-white mb-4">Get the Latest News</h4>
+                    <p>Stay updated with the latest news, exclusive offers, and exciting updates.</p>
                     <div class="position-relative w-100">
                         <input class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Stay updated</button>
                     </div>
                 </div>
             </div>
@@ -218,7 +218,7 @@
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <!--/*** This  is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the  without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">Alex kipchirchir</a>
+                    Designed By <a>Alex kipchirchir</a>
                 </div>
             </div>
         </div>
