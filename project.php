@@ -123,7 +123,7 @@
                         <a href=""><i class="fa fa-link fa-3x text-primary"></i></a>
                     </div>
                     <div class="project-title">
-                        <h4 class="mb-0">Financial Planning</h4>
+                        <h4 class="mb-0">Financial Scholarship</h4>
                     </div>
                 </div>
                 <div class="project-item pe-5 pb-5">
@@ -165,9 +165,9 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Our Office</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>65 NAKURU, KENYA</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+254713869060</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>alexkipchirchir927@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
@@ -210,7 +210,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                    &copy; <a class="border-bottom" href="#">ALEXKIPCHIRCHIR</a>, All Right Reserved.
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <!--/*** This  is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the  without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->

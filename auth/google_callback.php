@@ -11,8 +11,13 @@ if (!isset($_GET["code"])) {
     exit("Login failed");
 }
 
-$dotenv = Dotenv::createImmutable('../');
+// Load .env file
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
+
+// Enable error reporting
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
 $client = new Client();
 $apiUrl = 'https://oauth2.googleapis.com/token';
@@ -37,7 +42,7 @@ try {
         $tokenData = json_decode($response->getBody()->getContents(), true);
         $accessToken = $tokenData['access_token'];
 
-        // Use the access token to get user information
+        // Get user information from Google API
         $userResponse = $client->get('https://www.googleapis.com/oauth2/v1/userinfo?alt=json', [
             'headers' => [
                 'Authorization' => 'Bearer ' . $accessToken,
@@ -52,26 +57,44 @@ try {
             $email = htmlspecialchars($userinfo['email'], ENT_QUOTES, 'UTF-8');
             $picture = htmlspecialchars($userinfo['picture'], ENT_QUOTES, 'UTF-8');
 
+            // Include database connection
             include('../Database/db.php');
-            $check = "SELECT * FROM users WHERE Email = '$email'";
-            $check_query = mysqli_query($conn, $check);
-            $row = mysqli_fetch_assoc($check_query);
 
-            if (mysqli_num_rows($check_query) > 0) {
+            if (!$conn) {
+                exit("Database connection failed.");
+            }
+
+            // Check if user exists using a prepared statement
+           // $stmt = $conn->prepare("SELECT * FROM users WHERE Email = ?");
+           $stmt = $conn->prepare("SELECT * FROM users WHERE Email = ?");
+
+            $stmt->bind_param("s", $email);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $row = $result->fetch_assoc();
+
+            if ($row) {
                 $id = $row['SN'];
                 $_SESSION['google_auth'] = $id;
                 header("Location: http://localhost/Projects/Bursary_Fund/admin/index.php");
+                exit();
             } else {
-                // Insert user into database
-                $insert = "INSERT INTO users (First_Name, Last_Name, Email, Avatar, Pass, Reg_Date) VALUES ('$givenName', '$familyName', '$email', '$picture', 'portfolio1234', NOW())";
-                $insert_query = mysqli_query($conn, $insert);
+                // Insert user into database securely
+               // $stmt = $conn->prepare("INSERT INTO users (First_Name, Last_Name, Email, Avatar, Pass, Reg_Date) VALUES (?, ?, ?, ?, ?, NOW())");
+               $stmt = $conn->prepare("INSERT INTO users (First_Name, Last_Name, Email) VALUES (?, ?, ?)");
 
-                if ($insert_query) {
-                    $id = mysqli_insert_id($conn);
+                $password = password_hash("Alex234", PASSWORD_DEFAULT);
+               // $stmt->bind_param("sssss", $givenName, $familyName, $email, $picture, $password);
+                $stmt = $conn->prepare("INSERT INTO users (First_Name, Last_Name, Email, Avatar, Pass) VALUES (?, ?, ?, ?, ?)");
+                $stmt->bind_param("sssss", $first_name, $last_name, $email, $avatar, $password);
+
+              if ($stmt->execute()) {
+                    $id = $stmt->insert_id;
                     $_SESSION['google_auth'] = $id;
                     header("Location: http://localhost/Projects/Bursary_Fund/admin/index.php");
+                    exit();
                 } else {
-                    exit("Database insertion failed");
+                    exit("Database insertion failed: " . $stmt->error);
                 }
             }
         } else {
@@ -81,6 +104,6 @@ try {
         exit("Failed to get access token");
     }
 } catch (RequestException $e) {
-    exit('Request Exception: ' . $e->getMessage());
+    exit('Request Exception: ' . $e->getMessage()); 
 }
 ?>
