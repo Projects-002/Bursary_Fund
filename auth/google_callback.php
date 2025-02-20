@@ -65,7 +65,9 @@ try {
             }
 
             // Check if user exists using a prepared statement
-            $stmt = $conn->prepare("SELECT * FROM users WHERE Email = ?");
+           // $stmt = $conn->prepare("SELECT * FROM users WHERE Email = ?");
+           $stmt = $conn->prepare("SELECT * FROM users WHERE Email = ?");
+
             $stmt->bind_param("s", $email);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -78,11 +80,15 @@ try {
                 exit();
             } else {
                 // Insert user into database securely
-                $stmt = $conn->prepare("INSERT INTO users (First_Name, Last_Name, Email, Avatar, Pass, Reg_Date) VALUES (?, ?, ?, ?, ?, NOW())");
-                $password = password_hash("portfolio1234", PASSWORD_DEFAULT);
-                $stmt->bind_param("sssss", $givenName, $familyName, $email, $picture, $password);
-                
-                if ($stmt->execute()) {
+               // $stmt = $conn->prepare("INSERT INTO users (First_Name, Last_Name, Email, Avatar, Pass, Reg_Date) VALUES (?, ?, ?, ?, ?, NOW())");
+               $stmt = $conn->prepare("INSERT INTO users (First_Name, Last_Name, Email) VALUES (?, ?, ?)");
+
+                $password = password_hash("Alex234", PASSWORD_DEFAULT);
+               // $stmt->bind_param("sssss", $givenName, $familyName, $email, $picture, $password);
+                $stmt = $conn->prepare("INSERT INTO users (First_Name, Last_Name, Email, Avatar, Pass) VALUES (?, ?, ?, ?, ?)");
+                $stmt->bind_param("sssss", $first_name, $last_name, $email, $avatar, $password);
+
+              if ($stmt->execute()) {
                     $id = $stmt->insert_id;
                     $_SESSION['google_auth'] = $id;
                     header("Location: http://localhost/Projects/Bursary_Fund/admin/index.php");
@@ -98,6 +104,6 @@ try {
         exit("Failed to get access token");
     }
 } catch (RequestException $e) {
-    exit('Request Exception: ' . $e->getMessage());
+    exit('Request Exception: ' . $e->getMessage()); 
 }
 ?>

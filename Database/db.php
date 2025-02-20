@@ -1,15 +1,14 @@
 <?php
+$host = "localhost";  // Change if using a remote database
+$username = "root";   // Your MySQL username
+$password = "alex";       // Your MySQL password
+$database = "sholarease"; // Your database name
 
-    $db_server = 'localhost';
-    $db_user = 'root';
-    $db_pass = 'alex';
-    $db_name = 'bursary_fund';
-    $conn = '';
+// Create connection
+$conn = new mysqli($host, $username, $password, $database);
 
-        try{
-            $conn = mysqli_connect($db_server,$db_user,$db_pass, $db_name);
-        }catch(mysqli_sql_exception){
-            echo"Could not connect to the database";
-        }
-   
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 ?>
