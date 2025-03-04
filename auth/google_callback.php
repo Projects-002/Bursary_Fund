@@ -8,11 +8,11 @@ use Dotenv\Dotenv;
 session_start();
 
 if (!isset($_GET["code"])) {
-    exit("Login failed");
+    exit("Login failed: Missing authorization code");
 }
 
 // Load .env file
-$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+$dotenv = Dotenv::createImmutable('../');
 $dotenv->load();
 
 // Enable error reporting
@@ -76,22 +76,20 @@ try {
             if ($row) {
                 $id = $row['SN'];
                 $_SESSION['google_auth'] = $id;
-                header("Location: http://localhost/Projects/Bursary_Fund/admin/index.php");
+                header("Location: ../portal/index.php");
                 exit();
             } else {
                 // Insert user into database securely
-               // $stmt = $conn->prepare("INSERT INTO users (First_Name, Last_Name, Email, Avatar, Pass, Reg_Date) VALUES (?, ?, ?, ?, ?, NOW())");
-               $stmt = $conn->prepare("INSERT INTO users (First_Name, Last_Name, Email) VALUES (?, ?, ?)");
-
-                $password = password_hash("Alex234", PASSWORD_DEFAULT);
-               // $stmt->bind_param("sssss", $givenName, $familyName, $email, $picture, $password);
-                $stmt = $conn->prepare("INSERT INTO users (First_Name, Last_Name, Email, Avatar, Pass) VALUES (?, ?, ?, ?, ?)");
-                $stmt->bind_param("sssss", $first_name, $last_name, $email, $avatar, $password);
+            $stmt = $conn->prepare("INSERT INTO users (First_Name, Last_Name, Email, Avatar, Pass, Reg_Date) VALUES (?, ?, ?, ?, ?, NOW())");
+            
+            $password = password_hash("Alex234", PASSWORD_DEFAULT);
+            $stmt->bind_param("sssss", $givenName, $familyName, $email, $picture, $password);
+                // $stmt->bind_param("sssss", $first_name, $last_name, $email, $avatar, $password);
 
               if ($stmt->execute()) {
                     $id = $stmt->insert_id;
                     $_SESSION['google_auth'] = $id;
-                    header("Location: http://localhost/Projects/Bursary_Fund/admin/index.php");
+                    header("Location: ../portal/index.php");
                     exit();
                 } else {
                     exit("Database insertion failed: " . $stmt->error);
@@ -101,7 +99,8 @@ try {
             exit("Failed to get user information");
         }
     } else {
-        exit("Failed to get access token");
+        $errorResponse = json_decode($response->getBody()->getContents(), true);
+        exit("Failed to get access token: " . $errorResponse['error_description']);
     }
 } catch (RequestException $e) {
     exit('Request Exception: ' . $e->getMessage()); 

@@ -1,0 +1,122 @@
+:root{
+    --color-primary:#7380ec;
+    --color-danger: #ff7782;
+    --color-success:#41f1b6;
+    --color-warning:#ffbb55;
+    --color-white:#fff;
+    --color-info-dark:#7d8da1;
+    --color-info-light:#dce1eb;
+    --color-dark:#363949;
+    --color-light:rgba(132,139,200,0.18);
+    --color-primary-variant:#111e88;
+    --color-dark-variant:#677483;
+    --color-background:#f6f6f9;
+
+    --card-border-radius:2rem;
+    --border-radius-1:0.4rem;
+    --border-radius-2:0.8rem;
+    --border-radius-3:1.2rem;
+
+    --card-padding:1.8rem;
+    --padding-1:1.2rem;
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+
+/* ================= DARK THEME VARIABLES =============== */
+
+    .dark-theme-variables{
+            --color-background:#181a1e;
+            --color-white:#202528;
+            --color-dark:#edeffd;
+            --color-dark-variant:#a3bdcc;
+            --color-light:rgba(0,0,0,0.4);
+            --box-shadow: 0 2rem 3rem var(--color-light);
+         }
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-background);
+}
+
+
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+
+.container .form-el{
+    width: 50%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+
+.form-el form{
+   display: flex;
+   background: #f9fafe;
+   justify-content: center;
+   flex-direction: column;
+   width: 17em;
+   height: 21em;
+   border-radius: 0.2rem; 
+   box-shadow: 0 2rem 5rem 3rem #dce1eb;
+}
+
+.form-el form input{
+    margin: 1.5em;
+    border: none;
+}
+
+
+.form-el form .password, .username{  
+    background: #e8f0fe;
+    padding: 0.5em;
+    border-radius: 0.4em;
+ }
+ 
+
+.form-el form .submit{
+          background: #38ce3c;
+          border: none;
+          color: #fff;
+          padding: 0.7em;
+          font-weight: 700;
+          border-radius: 0.2rem;
+          cursor: pointer;
+}
+
+.form-el form label{
+    margin-left: 1rem;
+    color:var(--color-dark);
+    font-family: sans-serif;
+}
+
+.form-el form p{
+    text-align: center;
+    font-family: Poppins,sans-serif;
+    color: var(--color-primary-variant);
+    font-size: 0.7rem;
+}
+
+.form-el form p a{
+    text-decoration:underline;
+    text-underline-offset: 0.1rem;
+    color: rgb(5, 0, 66);
+}
