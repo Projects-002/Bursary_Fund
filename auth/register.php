@@ -24,7 +24,7 @@ if (isset($_POST['reg_new'])) {
 
     $new_user = $_POST['new_email']; 
     $token = bin2hex(random_bytes(16)); // Generate a unique token
-    $expires_at = date("Y-m-d H:i:s", strtotime('+1 hour')); // Set expiration time to 1 hour from now
+    $expires_at = date("Y-m-d H:i:s", strtotime('30 minutes')); // Set expiration time to 1 hour from now
 
     // Check if the user already exists
     $sql = "SELECT * FROM users WHERE email = ?";
@@ -77,20 +77,20 @@ if (isset($_POST['reg_new'])) {
                 $mail->Port = 587;
 
                 // Recipients
-                $mail->setFrom($_ENV['GMAIL_USERNAME'], 'Portfolio Ready');
+                $mail->setFrom($_ENV['GMAIL_USERNAME'], 'scholarease');
                 $mail->addAddress($new_user, 'Coder Info');
-                $mail->addReplyTo($_ENV['GMAIL_USERNAME'], 'Portfolio Ready');
+                $mail->addReplyTo($_ENV['GMAIL_USERNAME'], 'scholarease');
 
                 // Content
                 $mail->isHTML(true);
-                $mail->Subject = 'Register to Portfolio Ready';
+                $mail->Subject = 'Register to Scholarease';
                 $mail->Body = '
                 <!DOCTYPE html>
                 <html lang="en">
                 <head>
                   <meta charset="UTF-8">
                   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                  <title>Portfolio Ready</title>
+                  <title>Scholarease</title>
                   <style>
                       body {
                           margin: 0;
@@ -160,20 +160,20 @@ if (isset($_POST['reg_new'])) {
               <body>
                   <div class="container">
                       <div class="title">
-                          <h1>Portfolio Ready</h1>
+                          <h1>scholarease</h1>
                       </div>
                       <div class="content">
-                          <p>Thank you for your interest in portfolio ready. <br> Your software development success begins here!. <br> Kindly use the following link to register!</p>
+                          <p>Thank you for your interest in  Scholarease. <br> Your education success success begins here!. <br> Kindly use the following link to register!</p>
                       </div>
                       <div class="register-link">
-                          <a href="http://localhost/PortfolioReady/Auth/email_callback.php?token='.urlencode($token).'">Register Now</a>
+                          <a href="http://localhost/projects/bursary/Auth/email_callback.php?token='.urlencode($token).'">Register Now</a>
                           <p>The link expires in 1 hour</p>
                       </div>
                       <footer>
                           <p>Best Regards,</p>
-                          <p><strong>Astra Softwares</strong></p>
+                          <p><strong>Scholarease</strong></p>
                           <p><a href="https://astrasoft.tech">www.astrasoft.tech</a></p>
-                          <p>info.astrasoft.tech</p>
+                          <p>bursary fund</p>
                           <p>All rights reserved.</p>
                       </footer>
                   </div>

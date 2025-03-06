@@ -547,20 +547,9 @@
                         <i>📋</i> My Applications
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i>📈</i> Reports
-                    </a>
+                
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i>⚙️</i> Settings
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i>❓</i> Help
-                    </a>
+                
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
@@ -722,13 +711,24 @@
                             <input type="text" id="institution" class="form-input" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="amount">Amount Requested (KES)</label>
-                            <input type="number" id="amount" class="form-input" required>
-                        </div>
+                        <label class="form-label" for="amount">Amount Requested (KES)</label>
+                        <input type="number" id="amount" class="form-input" max="30000" required>
+                        </div> 
+                        <!-- <div class="form-group">  -->
+                            <!-- <label class="form-label" for="purpose">Purpose of Bursary</label> -->
+                            <!-- <textarea id="purpose" class="form-textarea" required></textarea> -->
+                        <!-- </div> -->
                         <div class="form-group">
-                            <label class="form-label" for="purpose">Purpose of Bursary</label>
-                            <textarea id="purpose" class="form-textarea" required></textarea>
-                        </div>
+                        <label class="form-label" for="amount">Required Documents </label>
+                        <fieldset>
+                            <legend:</legend>
+                            <label for="national_id">National ID / Birth Certificate: (required)</label>
+                            <input type="file" id="national_id" name="national_id" accept=".pdf,.jpg,.jpeg,.png" required><br><br>
+
+                            <label for="death_certificate">Death Certificate: (if applicable)</label>
+                            <input type="file" id="death_certificate" name="death_certificate" accept=".pdf,.jpg,.jpeg,.png"><br><br>
+                            </div
+                        </fieldset>
                         <div class="form-group">
                             <label class="form-label" for="bank">Bank Name</label>
                             <input type="text" id="bank" class="form-input" required>
