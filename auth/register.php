@@ -167,12 +167,12 @@ if (isset($_POST['reg_new'])) {
                       </div>
                       <div class="register-link">
                           <a href="http://localhost/projects/bursary/Auth/email_callback.php?token='.urlencode($token).'">Register Now</a>
-                          <p>The link expires in 1 hour</p>
+                          <p>The link expires in 30 minutes</p>
                       </div>
                       <footer>
                           <p>Best Regards,</p>
                           <p><strong>Scholarease</strong></p>
-                          <p><a href="https://astrasoft.tech">www.astrasoft.tech</a></p>
+                          <p><a href="busary fund"></a></p>
                           <p>bursary fund</p>
                           <p>All rights reserved.</p>
                       </footer>
