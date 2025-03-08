@@ -1,3 +1,68 @@
+
+    <?php
+    // Database connection
+    $servername = "localhost";
+    $username = "root";
+    $password = "alex";
+    $dbname = "scholarease";
+
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+         die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Handle form submission
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+         $fullName = $_POST['fullName'];
+         $email = $_POST['email'];
+         $phone = $_POST['phone'];
+         $dob = $_POST['dob'];
+         $gender = $_POST['gender'];
+         $education = $_POST['education'];
+         $institution = $_POST['institution'];
+         $amount = $_POST['amount'];
+         $bank = $_POST['bank'];
+         $branch = $_POST['branch'];
+         $accountNumber = $_POST['accountNumber'];
+         $accountName = $_POST['accountName'];
+
+         // Handle file uploads
+         $national_id = $_FILES['national_id']['name'];
+         $death_certificate = $_FILES['death_certificate']['name'];
+
+         // Move uploaded files to a directory
+         move_uploaded_file($_FILES['national_id']['tmp_name'], "uploads/" . $national_id);
+         if ($death_certificate) {
+              move_uploaded_file($_FILES['death_certificate']['tmp_name'], "uploads/" . $death_certificate);
+         }
+
+         // Insert data into the database
+         $sql = "INSERT INTO applications (full_name, email, phone, dob, gender, education_level, institution, amount_requested, national_id, death_certificate, bank_name, branch, account_number, account_name)
+                    VALUES ('$fullName', '$email', '$phone', '$dob', '$gender', '$education', '$institution', '$amount', '$national_id', '$death_certificate', '$bank', '$branch', '$accountNumber', '$accountName')";
+
+         if ($conn->query($sql) === TRUE) {
+              echo "New record created successfully";
+         } else {
+              echo "Error: " . $sql . "<br>" . $conn->error;
+         }
+
+         $conn->close();
+    }
+    ?>
+    
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

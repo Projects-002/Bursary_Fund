@@ -8,15 +8,34 @@ if (!isset($_SESSION['google_auth'])) {
 
 include('../Database/db.php');
 
+// Assuming db.php establishes a connection and assigns it to $conn
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 // Check which session variable is set and get the user ID
 $id = $_SESSION['google_auth'] ?? null;
 
-// Use prepared statements to prevent SQL injection
-$stmt = $conn->prepare("SELECT * FROM users WHERE SN = ?");
-$stmt->bind_param("i", $id);
-$stmt->execute();
-$result = $stmt->get_result();
-$details = $result->fetch_object();
+if ($id !== null) {
+    // Use prepared statements to prevent SQL injection
+    $stmt = $conn->prepare("SELECT * FROM users WHERE SN = ?");
+    $stmt->bind_param("i", $id);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $details = $result->fetch_object();
+
+    $profileImage = htmlspecialchars($details->Avatar, ENT_QUOTES, 'UTF-8'); // Sanitize output
+    $name = htmlspecialchars($details->First_Name, ENT_QUOTES, 'UTF-8'); // Sanitize output
+    $email = htmlspecialchars($details->Email, ENT_QUOTES, 'UTF-8'); // Sanitize output
+} else {
+    // Handle the case where $id is null
+    // Redirect to an error page or show an error message
+    header('location: ../AUTH/signin.php');
+    exit();
+}
 
 $profileImage = htmlspecialchars($details->Avatar, ENT_QUOTES, 'UTF-8'); // Sanitize output
 $name = htmlspecialchars($details->First_Name, ENT_QUOTES, 'UTF-8'); // Sanitize output

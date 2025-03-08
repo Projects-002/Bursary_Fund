@@ -37,3 +37,61 @@ composer update --ignore-platform-reqs
 
 ```
 
+
+
+
+
+To send the form data to the database, you need to handle the form submission using PHP and MySQL. Here's how you can do it:
+
+1. **Create a database and table**:
+    First, create a database and a table to store the bursary application data.
+
+    ```sql
+    CREATE DATABASE bursary_fund;
+
+    USE bursary_fund;
+
+    CREATE TABLE applications (
+         id INT AUTO_INCREMENT PRIMARY KEY,
+         full_name VARCHAR(255) NOT NULL,
+         email VARCHAR(255) NOT NULL,
+         phone VARCHAR(20) NOT NULL,
+         dob DATE NOT NULL,
+         gender ENUM('male', 'female') NOT NULL,
+         education_level VARCHAR(50) NOT NULL,
+         institution VARCHAR(255) NOT NULL,
+         amount_requested DECIMAL(10, 2) NOT NULL,
+         national_id VARCHAR(255) NOT NULL,
+         death_certificate VARCHAR(255),
+         bank_name VARCHAR(255) NOT NULL,
+         branch VARCHAR(255) NOT NULL,
+         account_number VARCHAR(50) NOT NULL,
+         account_name VARCHAR(255) NOT NULL,
+         application_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
+    ```
+
+2. **Update the form to include `enctype` for file uploads**:
+    Update the form tag to include `enctype="multipart/form-data"`.
+
+    ```html
+    <form id="application-form" enctype="multipart/form-data" method="POST" action="submit_application.php">
+    ```
+
+3. **Create a PHP script to handle the form submission**:
+    Create a file named `submit_application.php` to handle the form submission and save the data to the database.
+
+    ```php
+
+
+
+    4. **Update the form action**:
+    Update the form action in your HTML to point to `submit_application.php`.
+
+    ```html
+    <form id="application-form" enctype="multipart/form-data" method="POST" action="submit_application.php">
+    ```
+
+Now, when the form is submitted, the data will be sent to `submit_application.php`, which will handle the database insertion. Make sure to create a directory named `uploads` in your project root to store the uploaded files.
+
+
