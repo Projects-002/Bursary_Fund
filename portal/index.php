@@ -631,7 +631,7 @@
                 <h2>Applicant Dashboard</h2>
                 <div class="user-profile">
                     <img src="/api/placeholder/40/40" alt="User">
-                    <span>John Doe</span>
+                    <span></span>
                 </div>
             </div>
 
@@ -659,7 +659,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div>
-                                <div class="card-value">1</div>
+                                <div class="card-value">0</div>
                                 <div class="card-label">Pending</div>
                             </div>
                             <div class="card-icon warning">⏳</div>
@@ -668,7 +668,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div>
-                                <div class="card-value">1</div>
+                                <div class="card-value">0</div>
                                 <div class="card-label">Rejected</div>
                             </div>
                             <div class="card-icon danger">❌</div>
