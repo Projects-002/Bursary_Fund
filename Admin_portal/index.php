@@ -1,3 +1,39 @@
+<?php
+
+// Include the database configuration file
+require_once '../database/db.php';
+
+// get all applications
+$sql = "SELECT * FROM applications";
+$result = $conn->query($sql);
+$applications = mysqli_num_rows($result);
+
+
+
+// Get the total number of pending applications
+$sql = "SELECT * FROM applications WHERE Status = 'pending'";
+$feed = $conn->query($sql);
+$pending = mysqli_num_rows($feed);
+
+
+// Get the total number of pending applications
+$sql = "SELECT * FROM applications WHERE Status = 'approved'";
+$feed = $conn->query($sql);
+$approved = mysqli_num_rows($feed);
+
+
+
+// Get the total number of pending applications
+$sql = "SELECT * FROM applications WHERE Status = 'declined'";
+$feed = $conn->query($sql);
+$declined = mysqli_num_rows($feed);
+
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -856,7 +892,7 @@
                     </div>
                     <div class="card-info">
                         <div class="card-title">Pending Applications</div>
-                        <div class="card-value" id="pending-count">8</div>
+                        <div class="card-value" id="pending-count"><?= $pending ?></div>
                     </div>
                 </div>
                 <div class="card">
@@ -865,7 +901,7 @@
                     </div>
                     <div class="card-info">
                         <div class="card-title">Total Applications</div>
-                        <div class="card-value" id="total-count">42</div>
+                        <div class="card-value" id="total-count"><?=$applications ?></div>
                     </div>
                 </div>
                 <div class="card">
@@ -874,7 +910,7 @@
                     </div>
                     <div class="card-info">
                         <div class="card-title">Approved Applications</div>
-                        <div class="card-value" id="approved-count">28</div>
+                        <div class="card-value" id="approved-count"><?=$approved?></div>
                     </div>
                 </div>
                 <div class="card">
@@ -883,7 +919,7 @@
                     </div>
                     <div class="card-info">
                         <div class="card-title">Declined Applications</div>
-                        <div class="card-value" id="declined-count">6</div>
+                        <div class="card-value" id="declined-count"><?=$declined ?></div>
                     </div>
                 </div>
             </div>
@@ -914,7 +950,30 @@
                         </tr>
                     </thead>
                     <tbody id="applications-table-body">
-                        <!-- Table rows will be dynamically generated -->
+                        <?php while($row = $result->fetch_assoc()): ?>
+                        <tr data-id="<?= $row['id'] ?>">
+                            <td>
+                                <label class="checkbox-container">
+                                    <input type="checkbox" class="select-row">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </td>
+                            <td><?= $row['dob'] ?></td>
+                            <td><?= $row['id'] ?></td>
+                            <td><?= $row['full_name'] ?></td>
+                            <td><?= $row['amount_requested'] ?></td>
+                            <td>
+                                <span class="status-badge status-<?= strtolower($row['Status']) ?>">
+                                    <?= ucfirst($row['Status']) ?>
+                                </span>
+                            </td>
+                            <td class="action-buttons">
+                                <button class="approve-btn" onclick="window.location='./operations/aprove.php?id=<?= $row['id'] ?>'">Approve</button>
+                                <button class="decline-btn" onclick="window.location='./operations/decline.php?id=<?= $row['id'] ?>'">Decline</button>
+                                <button class="detail-btn" onclick="window.location='./operations/details.php?id=<?= $row['id'] ?>'">Details</button>
+                            </td>
+                        </tr>
+                        <?php endwhile; ?>
                     </tbody>
                 </table>
                 <div class="pagination" id="pagination">
