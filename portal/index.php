@@ -1,66 +1,105 @@
 
-    <?php
-    // Database connection
-    $servername = "localhost";
-    $username = "root";
-    $password = "alex";
-    $dbname = "scholarease";
+<?php
+session_start();
+if (!isset($_SESSION['google_auth']) && !isset($_SESSION['github_auth']) && !isset($_SESSION['email_auth'])) {
+   header('location: ../AUTH/signin.php');
+   exit();
+}
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+// Database connection
+$servername = "localhost";
+$username = "root";
+$password = "alex";
+$dbname = "scholarease";
 
-    // Check connection
-    if ($conn->connect_error) {
-         die("Connection failed: " . $conn->connect_error);
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+
+// Check which session variable is set and get the user ID
+$id = isset($_SESSION['google_auth']) ? $_SESSION['google_auth'] : (isset($_SESSION['github_auth']) ? $_SESSION['github_auth'] : $_SESSION['email_auth']);
+
+// Use prepared statements to prevent SQL injection
+$stmt = $conn->prepare("SELECT * FROM users WHERE SN = ?");
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$result = $stmt->get_result();
+$details = $result->fetch_object();
+
+
+$profileImage = htmlspecialchars($details->Avatar, ENT_QUOTES, 'UTF-8'); // Sanitize output
+$fname = htmlspecialchars($details->First_Name, ENT_QUOTES, 'UTF-8'); // Sanitize output
+$lname = htmlspecialchars($details->Last_Name, ENT_QUOTES, 'UTF-8'); // Sanitize output
+$email = htmlspecialchars($details->Email, ENT_QUOTES, 'UTF-8'); // Sanitize output
+
+
+// get total applications where email = $email
+$sql = "SELECT * FROM applications WHERE email = '$email'";
+$result = $conn->query($sql);
+$applications = $result->num_rows;
+
+
+
+// Handle form submission
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $fullName = $_POST['fullName'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $dob = $_POST['dob'];
+    $gender = $_POST['gender'];
+    $education = $_POST['education'];
+    $institution = $_POST['institution'];
+    $amount = isset($_POST['amount']) ? $_POST['amount'] : '0.00';
+    $userType = isset($_POST['userType']) ? $_POST['userType'] : 'student'; // Replace 'student' with a valid default value for user_type
+    $bank = isset($_POST['bank']) ? $_POST['bank'] : '';
+    $branch = isset($_POST['branch']) ? $_POST['branch'] : '';
+    $accountNumber = isset($_POST['accountNumber']) ? $_POST['accountNumber'] : '';
+    $accountName = isset($_POST['accountName']) ? $_POST['accountName'] : '';
+
+    // Handle file uploads
+    $national_id = $_FILES['national_id']['name'];
+    $death_certificate = $_FILES['death_certificate']['name'];
+    $admission_letter = isset($_FILES['admission_letter']['name']) ? $_FILES['admission_letter']['name'] : '';
+
+    // Move uploaded files to a directory
+    move_uploaded_file($_FILES['national_id']['tmp_name'], "uploads/" . $national_id);
+    if ($death_certificate) {
+        move_uploaded_file($_FILES['death_certificate']['tmp_name'], "uploads/" . $death_certificate);
+    }
+    if ($admission_letter) {
+        move_uploaded_file($_FILES['admission_letter']['tmp_name'], "uploads/" . $admission_letter);
     }
 
-    // Handle form submission
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-         $fullName = $_POST['fullName'];
-         $email = $_POST['email'];
-         $phone = $_POST['phone'];
-         $dob = $_POST['dob'];
-         $gender = $_POST['gender'];
-         $education = $_POST['education'];
-         $institution = $_POST['institution'];
-         $amount = $_POST['amount'];
-         $bank = $_POST['bank'];
-         $branch = $_POST['branch'];
-         $accountNumber = $_POST['accountNumber'];
-         $accountName = $_POST['accountName'];
+    // Insert data into the database
+    $sql = "INSERT INTO applications (full_name, email, phone, dob, gender, education_level, institution, amount_requested, user_type, national_id, death_certificate, admission_letter, bank_name, branch, account_number, account_name)
+            VALUES ('$fullName', '$email', '$phone', '$dob', '$gender', '$education', '$institution', '$amount', '$userType', '$national_id', '$death_certificate', '$admission_letter', '$bank', '$branch', '$accountNumber', '$accountName')";
 
-         // Handle file uploads
-         $national_id = $_FILES['national_id']['name'];
-         $death_certificate = $_FILES['death_certificate']['name'];
-
-         // Move uploaded files to a directory
-         move_uploaded_file($_FILES['national_id']['tmp_name'], "uploads/" . $national_id);
-         if ($death_certificate) {
-              move_uploaded_file($_FILES['death_certificate']['tmp_name'], "uploads/" . $death_certificate);
-         }
-
-         // Insert data into the database
-         $sql = "INSERT INTO applications (full_name, email, phone, dob, gender, education_level, institution, amount_requested, national_id, death_certificate, bank_name, branch, account_number, account_name)
-                    VALUES ('$fullName', '$email', '$phone', '$dob', '$gender', '$education', '$institution', '$amount', '$national_id', '$death_certificate', '$bank', '$branch', '$accountNumber', '$accountName')";
-
-         if ($conn->query($sql) === TRUE) {
-              echo "New record created successfully";
-         } else {
-              echo "Error: " . $sql . "<br>" . $conn->error;
-         }
-
-         $conn->close();
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
-    ?>
+
+    $conn->close();
+}
+
+
+
+
+
+
+
+
+
+
+?>
+
     
-
-
-
-
-
-
-
-
 
 
 <!DOCTYPE html>
@@ -617,7 +656,7 @@
                 
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="logout.php" class="nav-link">
                         <i>🚪</i> Logout
                     </a>
                 </li>
@@ -630,8 +669,8 @@
                 <div class="hamburger-menu" id="hamburger-menu">☰</div>
                 <h2>Applicant Dashboard</h2>
                 <div class="user-profile">
-                    <img src="/api/placeholder/40/40" alt="User">
-                    <span></span>
+                    <img src="<?=$profileImage ?>" alt="User">
+                    <span><?=$fname ?></span>
                 </div>
             </div>
 
@@ -641,7 +680,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div>
-                                <div class="card-value">3</div>
+                                <div class="card-value"><?php echo$applications ?></div>
                                 <div class="card-label">Total Applications</div>
                             </div>
                             <div class="card-icon primary">📊</div>
@@ -717,63 +756,63 @@
                                 <td><span class="status-badge status-rejected">Rejected</span></td>
                                 <td>
                                     <button class="action-btn view-details" data-id="BUR-2025-003">👁️ View</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
 
-            <!-- New Application Form -->
-            <div class="section-content" id="new-application">
-                <div class="form-container active">
-                    <h3 class="form-title">New Bursary Application</h3>
-                    <form id="application-form">
-                        <div class="form-group">
-                            <label class="form-label" for="fullName">Full Name</label>
-                            <input type="text" id="fullName" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="email">Email Address</label>
-                            <input type="email" id="email" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="dob">Date of Birth</label>
-                            <input type="date" id="dob" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">Gender</label>
-                            <div class="radio-group">
-                                <div class="radio-option">
-                                    <input type="radio" id="male" name="gender" value="male" required>
-                                    <label for="male">Male</label>
-                                </div>
-                                <div class="radio-option">
-                                    <input type="radio" id="female" name="gender" value="female">
-                                    <label for="female">Female</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="education">Level of Education</label>
-                            <select id="education" class="form-select" required>
-                                <option value="">Select Education Level</option>
-                                
-                                <option value="secondary">Secondary School</option>
-                                <option value="certificate">Certificate</option>
-                                <option value="diploma">Diploma</option>
-                                <option value="undergraduate">Undergraduate Degree</option>
-                                <option value="postgraduate">Postgraduate Degree</option>
-                                
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="institution">Current Institution</label>
-                            <input type="text" id="institution" class="form-input" required>
+                                                <!-- New Application Form -->
+                                                <div class="section-content" id="new-application">
+                                                    <div class="form-container active">
+                                                        <h3 class="form-title">New Bursary Application</h3>
+                                                        <form id="application-form" enctype="multipart/form-data" method="POST">
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="fullName">Full Name</label>
+                                                                <input type="text" id="fullName" value="<?=$fname ?> <?= $lname?>" name="fullName" class="form-input" disabled required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="email">Email Address</label>
+                                                                <input type="email" value="<?= $email ?>" id="email" name="email" class="form-input" disabled required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="phone">Phone Number</label>
+                                                                <input type="tel" id="phone" name="phone" class="form-input" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="dob">Date of Birth</label>
+                                                                <input type="date" id="dob" name="dob" class="form-input" required>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="form-label">Gender</label>
+                                                                <div class="radio-group">
+                                                                    <div class="radio-option">
+                                                                        <input type="radio" id="male" name="gender" value="male" required>
+                                                                        <label for="male">Male</label>
+                                                                    </div>
+                                                                    <div class="radio-option">
+                                                                        <input type="radio" id="female" name="gender" value="female">
+                                                                        <label for="female">Female</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="education">Level of Education</label>
+                                                                <select id="education" name="education" class="form-select" required>
+                                                                    <option value="">Select Education Level</option>
+                                                                    <option value="secondary">Secondary School</option>
+                                                                    <option value="certificate">Certificate</option>
+                                                                    <option value="diploma">Diploma</option>
+                                                                    <option value="undergraduate">Undergraduate Degree</option>
+                                                                    <option value="postgraduate">Postgraduate Degree</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="institution">Current Institution</label>
+                                                                <input type="text" id="institution" name="institution" class="form-input" required>
+                                                            </div>
+                                                            <div class="form-group">
                         </div>
                         <div class="form-group">
                         <label class="form-label" for="amount">Amount Requested (KES)</label>
@@ -792,7 +831,7 @@
 
                             <label for="death_certificate">Death Certificate: (if applicable)</label>
                             <input type="file" id="death_certificate" name="death_certificate" accept=".pdf,.jpg,.jpeg,.png"><br><br>
-                            </div
+                            </div>
                         </fieldset>
                         <div class="form-group">
                             <label class="form-label" for="bank">Bank Name</label>
@@ -966,4 +1005,9 @@
                         <div class="timeline-item">
                             <div class="timeline-date">03/02/2025</div>
                             <div class="timeline-title">Under Review</div>
-                
+                        </div>
+    </div>
+        </body>
+</html>
+
+

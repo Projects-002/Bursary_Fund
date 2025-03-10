@@ -6,7 +6,7 @@ Use Dotenv\Dotenv;// Import Dotenv classes into the global namespace
 // Load Composer's autoloader
 include '../vendor/autoload.php';
 require_once '../Database/db.php';
-$conn = new mysqli('localhost', 'root', '22092209', 'scholarease'); // Initialize the database connection
+$conn = new mysqli('localhost', 'root', 'alex', 'scholarease'); // Initialize the database connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -166,7 +166,7 @@ if (isset($_POST['reg_new'])) {
                           <p>Thank you for your interest in  Scholarease. <br> Your education success success begins here!. <br> Kindly use the following link to register!</p>
                       </div>
                       <div class="register-link">
-                          <a href="http://localhost/projects/bursary/Auth/email_callback.php?token='.urlencode($token).'">Register Now</a>
+                          <a href="http://localhost/projects/bursary_fund/Auth/email_callback.php?token='.urlencode($token).'">Register Now</a>
                           <p>The link expires in 30 minutes</p>
                       </div>
                       <footer>
@@ -233,7 +233,7 @@ if (isset($_POST['reg_new'])) {
                             <input type="email" name="new_email" class="form-control py-2" id="register_email" placeholder="Enter your email" required>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" name="back" onclick="window.location='index.php'" >Back</button>
+                            <button type="button" class="btn btn-secondary" name="back" onclick="window.location='signin.php'" >Back</button>
                             <button type="submit" class="btn btn-success" id="sendemail" name="reg_new">Send Link</button>
                         </div>
                     </form>

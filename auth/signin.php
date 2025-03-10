@@ -14,7 +14,7 @@ $dotenv->load();
 //  $password = $_ENV['DB_PASSWORD'];
 //  $dbname = $_ENV['DB_NAME'];
 
-$conn = new mysqli('localhost','root', '22092209', 'scholarease');
+$conn = new mysqli('localhost','root', 'alex', 'scholarease');
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
