@@ -47,13 +47,13 @@ $applications = $result->num_rows;
 
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $fullName = $_POST['fullName'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $dob = $_POST['dob'];
-    $gender = $_POST['gender'];
-    $education = $_POST['education'];
-    $institution = $_POST['institution'];
+    $fullName = htmlspecialchars($details->First_Name, ENT_QUOTES, 'UTF-8'); // Sanitize output
+    $email = htmlspecialchars($details->Email, ENT_QUOTES, 'UTF-8');
+    $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
+    $dob = isset($_POST['dob']) ? $_POST['dob'] : '';
+    $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
+    $education = isset($_POST['education']) ? $_POST['education'] : '';
+    $institution = isset($_POST['institution']) ? $_POST['institution'] : '';
     $amount = isset($_POST['amount']) ? $_POST['amount'] : '0.00';
     $userType = isset($_POST['userType']) ? $_POST['userType'] : 'student'; // Replace 'student' with a valid default value for user_type
     $bank = isset($_POST['bank']) ? $_POST['bank'] : '';
@@ -76,19 +76,49 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Insert data into the database
-    $sql = "INSERT INTO applications (full_name, email, phone, dob, gender, education_level, institution, amount_requested, user_type, national_id, death_certificate, admission_letter, bank_name, branch, account_number, account_name)
-            VALUES ('$fullName', '$email', '$phone', '$dob', '$gender', '$education', '$institution', '$amount', '$userType', '$national_id', '$death_certificate', '$admission_letter', '$bank', '$branch', '$accountNumber', '$accountName')";
+    $stmt = $conn->prepare("INSERT INTO applications (full_name, email, phone, dob, gender, education_level, institution, amount_requested, user_type, national_id, death_certificate, admission_letter, bank_name, branch, account_number, account_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    $stmt->bind_param("ssssssssssssssss", $fullName, $email, $phone, $dob, $gender, $education, $institution, $amount, $userType, $national_id, $death_certificate, $admission_letter, $bank, $branch, $accountNumber, $accountName);
 
-    if ($conn->query($sql) === TRUE) {
-        echo "New record created successfully";
+    if ($stmt->execute()) {
+        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+        echo "<script>
+            Swal.fire({
+            icon: 'success',
+            title: 'Application Submitted',
+            text: 'Your application has been submitted successfully!',
+            confirmButtonText: 'OK'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = 'index.php';
+            }
+            });
+        </script>";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $stmt->error;
     }
 
-    $conn->close();
+    // $conn->close();
 }
 
 
+
+
+// get total  applications where email = $email and Status = 'approved'
+$sql = "SELECT * FROM applications WHERE email = '$email' AND Status = 'approved'";
+$result = $conn->query($sql);
+$approved = $result->num_rows;
+
+
+// get total  applications where email = $email and Status = 'pending'
+$sql = "SELECT * FROM applications WHERE email = '$email' AND Status = 'pending'";
+$result = $conn->query($sql);
+$pending = $result->num_rows;
+
+
+// get total  applications where email = $email and Status = 'declined'
+$sql = "SELECT * FROM applications WHERE email = '$email' AND Status = 'declined'";
+$result = $conn->query($sql);
+$declined = $result->num_rows;
 
 
 
@@ -100,7 +130,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
     
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -689,7 +718,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="card">
                         <div class="card-header">
                             <div>
-                                <div class="card-value">1</div>
+                                <div class="card-value"><?= $approved?></div>
                                 <div class="card-label">Approved</div>
                             </div>
                             <div class="card-icon success">✅</div>
@@ -698,7 +727,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="card">
                         <div class="card-header">
                             <div>
-                                <div class="card-value">0</div>
+                                <div class="card-value"><?= $pending ?></div>
                                 <div class="card-label">Pending</div>
                             </div>
                             <div class="card-icon warning">⏳</div>
@@ -707,8 +736,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="card">
                         <div class="card-header">
                             <div>
-                                <div class="card-value">0</div>
-                                <div class="card-label">Rejected</div>
+                                <div class="card-value"><?=$declined ?></div>
+                                <div class="card-label">Declined</div>
                             </div>
                             <div class="card-icon danger">❌</div>
                         </div>
@@ -723,7 +752,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <table>
                         <thead>
                             <tr>
-                                <th>Ref. Number</th>
+                                <th>id</th>
                                 <th>Date Applied</th>
                                 <th>Amount (KES)</th>
                                 <th>Status</th>
@@ -731,36 +760,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>BUR-2025-001</td>
-                                <td>01/02/2025</td>
-                                <td>15,000</td>
-                                <td><span class="status-badge status-approved">Approved</span></td>
-                                <td>
-                                    <button class="action-btn view-details" data-id="BUR-2025-001">👁️ View</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>BUR-2025-002</td>
-                                <td>15/02/2025</td>
-                                <td>20,000</td>
-                                <td><span class="status-badge status-pending">Pending</span></td>
-                                <td>
-                                    <button class="action-btn view-details" data-id="BUR-2025-002">👁️ View</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>BUR-2025-003</td>
-                                <td>01/03/2025</td>
-                                <td>25,000</td>
-                                <td><span class="status-badge status-rejected">Rejected</span></td>
-                                <td>
-                                    <button class="action-btn view-details" data-id="BUR-2025-003">👁️ View</button>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
+                            <?php
+                            $sql = "SELECT id, created_at, amount_requested, Status FROM applications WHERE email = '$email'";
+                            $result = $conn->query($sql);
+
+                            if ($result->num_rows > 0) {
+                                while ($row = $result->fetch_assoc()) {
+                                    echo "<tr>";
+                                    echo "<td>" . htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8') . "</td>";
+                                    echo "<td>" . htmlspecialchars($row['created_at'], ENT_QUOTES, 'UTF-8') . "</td>";
+                                    echo "<td>" . htmlspecialchars($row['amount_requested'], ENT_QUOTES, 'UTF-8') . "</td>";
+                                    echo "<td><span class='status-badge status-" . strtolower(htmlspecialchars($row['Status'], ENT_QUOTES, 'UTF-8')) . "'>" . htmlspecialchars($row['Status'], ENT_QUOTES, 'UTF-8') . "</span></td>";
+                                    echo "<td><button class='action-btn view-details' data-id='" . htmlspecialchars($row['id'], ENT_QUOTES, 'UTF-8') . "'>👁️ View</button></td>";
+                                    echo "</tr>";
+                                }
+                            } else {
+                                echo "<tr><td colspan='5'>No applications found</td></tr>";
+                            }
+                            ?>
+                        </tbody>
+                    </table>  </div>
                                                 </div>
 
                                                 <!-- New Application Form -->
@@ -774,7 +793,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                             </div>
                                                             <div class="form-group">
                                                                 <label class="form-label" for="email">Email Address</label>
-                                                                <input type="email" value="<?= $email ?>" id="email" name="email" class="form-input" disabled required>
+                                                                <input type="email" value="<?= $email ?>" id="email" name="email" class="form-input" disabled  required>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label class="form-label" for="phone">Phone Number</label>
@@ -816,7 +835,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="form-group">
                         <label class="form-label" for="amount">Amount Requested (KES)</label>
-                        <input type="number" id="amount" class="form-input" max="30000" required>
+                        <input type="number" id="amount" name="amount" class="form-input" max="30000" required>
                         </div> 
                         <!-- <div class="form-group">  -->
                             <!-- <label class="form-label" for="purpose">Purpose of Bursary</label> -->
@@ -835,19 +854,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </fieldset>
                         <div class="form-group">
                             <label class="form-label" for="bank">Bank Name</label>
-                            <input type="text" id="bank" class="form-input" required>
+                            <input type="text" id="bank" name="bank" class="form-input" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="branch">Branch</label>
-                            <input type="text" id="branch" class="form-input" required>
+                            <input type="text" id="branch" name="branch" class="form-input" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="accountNumber">Account Number</label>
-                            <input type="text" id="accountNumber" class="form-input" required>
+                            <input type="text" id="accountNumber" name="accountNumber" class="form-input" required>
                         </div>
                         <div class="form-group">
                             <label class="form-label" for="accountName">Account Name</label>
-                            <input type="text" id="accountName" class="form-input" required>
+                            <input type="text" id="accountName" name="accountName" class="form-input" required>
                         </div>
                         <div class="form-actions">
                             <button type="button" class="btn btn-outline" id="cancel-form">Cancel</button>
@@ -857,59 +876,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
             </div>
 
-            <!-- My Applications Section -->
-            <div class="section-content" id="my-applications">
-                <div class="applications-table">
-                    <div class="table-header">
-                        <div class="table-title">All My Applications</div>
-                        <input type="text" class="search-input" placeholder="Search applications...">
-                    </div>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Ref. Number</th>
-                                <th>Date Applied</th>
-                                <th>Purpose</th>
-                                <th>Amount (KES)</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>BUR-2025-001</td>
-                                <td>01/02/2025</td>
-                                <td>Tuition Fees</td>
-                                <td>15,000</td>
-                                <td><span class="status-badge status-approved">Approved</span></td>
-                                <td>
-                                    <button class="action-btn view-details" data-id="BUR-2025-001">👁️ View</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>BUR-2025-002</td>
-                                <td>15/02/2025</td>
-                                <td>Books and Materials</td>
-                                <td>20,000</td>
-                                <td><span class="status-badge status-pending">Pending</span></td>
-                                <td>
-                                    <button class="action-btn view-details" data-id="BUR-2025-002">👁️ View</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>BUR-2025-003</td>
-                                <td>01/03/2025</td>
-                                <td>Accommodation</td>
-                                <td>25,000</td>
-                                <td><span class="status-badge status-rejected">Rejected</span></td>
-                                <td>
-                                    <button class="action-btn view-details" data-id="BUR-2025-003">👁️ View</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
         </div>
     </div>
 
