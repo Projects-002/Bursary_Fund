@@ -2,12 +2,48 @@
 
 // Include the database configuration file
 require_once '../database/db.php';
+session_start();
+if (!isset($_SESSION['google_auth']) && !isset($_SESSION['github_auth']) && !isset($_SESSION['email_auth'])) {
+   header('location: ../AUTH/signin.php');
+   exit();
+}
+
+// Database connection
+$servername = "localhost";
+$username = "root";
+$password = "alex";
+$dbname = "scholarease";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+
+// Check which session variable is set and get the user ID
+$id = isset($_SESSION['google_auth']) ? $_SESSION['google_auth'] : (isset($_SESSION['github_auth']) ? $_SESSION['github_auth'] : $_SESSION['email_auth']);
+
+// Use prepared statements to prevent SQL injection
+$stmt = $conn->prepare("SELECT * FROM users WHERE SN = ?");
+$stmt->bind_param("i", $id);
+$stmt->execute();
+$result = $stmt->get_result();
+$details = $result->fetch_object();
+
+
+$profileImage = htmlspecialchars($details->Avatar, ENT_QUOTES, 'UTF-8'); // Sanitize output
+$fname = htmlspecialchars($details->First_Name, ENT_QUOTES, 'UTF-8'); // Sanitize output
+$lname = htmlspecialchars($details->Last_Name, ENT_QUOTES, 'UTF-8'); // Sanitize output
+$email = htmlspecialchars($details->Email, ENT_QUOTES, 'UTF-8'); // Sanitize output
+
 
 // get all applications
 $sql = "SELECT * FROM applications";
 $result = $conn->query($sql);
 $applications = mysqli_num_rows($result);
-
 
 
 // Get the total number of pending applications
@@ -830,10 +866,10 @@ $declined = mysqli_num_rows($feed);
                 <span>Scholarease</span>
             </div>
             <div class="user-profile">
-                <img src="/api/placeholder/50/50" alt="User Profile">
+                <img src="<?=$profileImage?>" alt="User Profile">
                 <div class="user-info">
-                    <div class="user-name">Admin User</div>
-                    <div class="user-role">Administrator</div>
+                    <div class="user-name"><?=$fname?></div>
+                    <!-- <div class="user-role">Administrator</div> -->
                 </div>
                 <div class="user-status"></div>
             </div>

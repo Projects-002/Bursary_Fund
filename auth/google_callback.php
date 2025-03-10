@@ -71,9 +71,7 @@ try {
             }
 
             // Check if user exists using a prepared statement
-           // $stmt = $conn->prepare("SELECT * FROM users WHERE Email = ?");
-           $stmt = $conn->prepare("SELECT * FROM users WHERE Email = ?");
-
+            $stmt = $conn->prepare("SELECT * FROM users WHERE Email = ?");
             $stmt->bind_param("s", $email);
             $stmt->execute();
             $result = $stmt->get_result();
@@ -82,7 +80,11 @@ try {
             if ($row) {
                 $id = $row['SN'];
                 $_SESSION['google_auth'] = $id;
-                header("Location: ../portal/index.php");
+                if ($row['User_Role'] == 'admin') {
+                    header("Location: ../admin_portal/index.php");
+                } else {
+                    header("Location: ../portal/index.php");
+                }
                 exit();
             } else {
                 // Insert user into database securely
