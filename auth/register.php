@@ -6,7 +6,7 @@ Use Dotenv\Dotenv;// Import Dotenv classes into the global namespace
 // Load Composer's autoloader
 include '../vendor/autoload.php';
 require_once '../Database/db.php';
-$conn = new mysqli('localhost', 'root', 'alex', 'scholarease'); // Initialize the database connection
+$conn = new mysqli('localhost', 'root', '22092209', 'scholarease'); // Initialize the database connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -183,9 +183,16 @@ if (isset($_POST['reg_new'])) {
                 $mail->AltBody = 'Hello welcome to scholarease.';
 
                 $mail->send();
-                echo '<div class="container w-50  alert alert-success mt-5" role="alert">
+                echo '
+                      
+                     <div class="container w-50  alert alert-success mt-5" role="alert">
                       <i class="bi bi-check-circle-fill"></i> Registration link sent successfullly Kindly check your email;
-                      </div>';
+
+                      </div>
+                      
+                      ';
+
+                    //   exit();
             } catch (Exception $e) {
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
             }
@@ -208,12 +215,10 @@ if (isset($_POST['reg_new'])) {
     <title>Document</title>
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<body style="display: flex; align-items: center; justify-content: center; height: 100vh;">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         
 </head>
-<body style="display: flex; align-items: center; justify-content: center; height: 100vh;">
-
+<body style="display: flex; align-items: center; justify-content: center; flex-direction:column;">
     <!-- Register Modal -->
     <div class="modal d-flex align-items-center justify-content-center flex-column">
         <div class="modal-dialog">

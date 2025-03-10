@@ -9,3 +9,11 @@ Pass varchar(255),
  Reg_Date datetime default now()
 );
 
+
+CREATE TABLE user_tokens (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    token VARCHAR(255) NOT NULL,
+    expires_at DATETIME NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
