@@ -906,11 +906,12 @@ $declined = mysqli_num_rows($feed);
                     <input type="text" placeholder="Search...">
                 </div>
                 <div class="header-actions">
-                    <button class="action-btn" id="login-btn">
-                        <i class="fas fa-sign-in-alt"></i>
+                    <button class="action-btn" id="logout-btn" onclick="window.location='../AUTH/logout.php'">
+                        <i class="fas fa-sign-out-alt"></i>
                     </button>
-                    <button class="action-btn" id="settings-btn">
-                        <i class="fas fa-cog"></i>
+                    </button>
+                    <!-- <button class="action-btn" id="settings-btn"> -->
+                        <!-- <i class="fas fa-cog"></i> -->
                     </button>
                     <div class="theme-toggle" id="theme-toggle">
                         <div class="theme-icon sun-icon">☀️</div>
