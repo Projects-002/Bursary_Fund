@@ -114,22 +114,22 @@
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Our Services</p>
-                <h1 class="display-5 mb-5">Awesome Financial Services For Business</h1>
+                <h1 class="display-5 mb-5">Awesome Application and Tracking</h1>
             </div>
             <div class="row g-4 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="col-lg-4">
                     <div class="nav nav-pills d-flex justify-content-between w-100 h-100 me-4">
                         <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-4 active" data-bs-toggle="pill" data-bs-target="#tab-pane-1" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Financial Planning</h5>
+                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Easy Application Process</h5>
                         </button>
                         <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-2" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Cash Investment</h5>
+                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Real-time Application Tracking</h5>
                         </button>
                         <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-4" data-bs-toggle="pill" data-bs-target="#tab-pane-3" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Financial Consultancy</h5>
+                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Direct Communication</h5>
                         </button>
                         <button class="nav-link w-100 d-flex align-items-center text-start border p-4 mb-0" data-bs-toggle="pill" data-bs-target="#tab-pane-4" type="button">
-                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Business Loans</h5>
+                            <h5 class="m-0"><i class="fa fa-bars text-primary me-3"></i>Secure Data Management</h5>
                         </button>
                     </div>
                 </div>
@@ -139,17 +139,18 @@
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute rounded w-100 h-100" src="img/service-1.jpg"
+                                        <img class="position-absolute rounded w-100 h-100" src="img\servicej.png"
                                             style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h3 class="mb-4">25 Years Of Experience In Financial Support</h3>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet.</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Secured Loans</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Credit Facilities</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Cash Advanced</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
+                                    <h3 class="mb-4">Your all time Financial Support</h3>
+                                    <p class="mb-4">We believe that access to education is key to unlocking potential. Our bursary management system empowers educational institutions 
+                                    and organizations to efficiently manage their funds and maximize their impact on students' lives..</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Simplifying Bursary Management</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Empowering Education Through Efficient Bursary Solutions</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Streamlining Bursary Applications & Administrationd</p>
+                                    <!-- <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a> -->
                                 </div>
                             </div>
                         </div>
@@ -157,17 +158,18 @@
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute rounded w-100 h-100" src="img/service-2.jpg"
+                                        <img class="position-absolute rounded w-100 h-100" src="img\service2j.png"
                                             style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h3 class="mb-4">25 Years Of Experience In Financial Support</h3>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet.</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Secured Loans</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Credit Facilities</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Cash Advanced</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
+                                    <h3 class="mb-4">Your all time  Financial Support</h3>
+                                    <p class="mb-4">We believe that access to education is key to unlocking potential. Our bursary management system empowers educational institutions and organizations to efficiently 
+                                    manage their funds and maximize their impact on students' lives.</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Simplifying Bursary Management</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Empowering Education Through Efficient Bursary Solutions</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Streamlining Bursary Applications & Administrationd</p>
+                                    <!-- <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a> -->
                                 </div>
                             </div>
                         </div>
@@ -175,17 +177,18 @@
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute rounded w-100 h-100" src="img/service-3.jpg"
+                                        <img class="position-absolute rounded w-100 h-100" src="img\service3j.png"
                                             style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h3 class="mb-4">25 Years Of Experience In Financial Support</h3>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet.</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Secured Loans</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Credit Facilities</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Cash Advanced</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
+                                    <h3 class="mb-4">Your all time Financial Support</h3>
+                                    <p class="mb-4">We believe that access to education is key to unlocking potential. Our bursary management system empowers educational institutions and organizations to
+                                    efficiently manage their funds and maximize their impact on students' lives.</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Simplifying Bursary Management</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Empowering Education Through Efficient Bursary Solutions</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Streamlining Bursary Applications & Administration</p>
+                                    <!-- <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a> -->
                                 </div>
                             </div>
                         </div>
@@ -193,17 +196,18 @@
                             <div class="row g-4">
                                 <div class="col-md-6" style="min-height: 350px;">
                                     <div class="position-relative h-100">
-                                        <img class="position-absolute rounded w-100 h-100" src="img/service-4.jpg"
+                                        <img class="position-absolute rounded w-100 h-100" src="img\pexels-tima-miroshnichenko-5380664.jpg"
                                             style="object-fit: cover;" alt="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <h3 class="mb-4">25 Years Of Experience In Financial Support</h3>
-                                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo erat amet.</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Secured Loans</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Credit Facilities</p>
-                                    <p><i class="fa fa-check text-primary me-3"></i>Cash Advanced</p>
-                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Read More</a>
+                                    <h3 class="mb-4">Your all time Financial Support</h3>
+                                    <p class="mb-4">>We believe that access to education is key to unlocking potential. Our bursary management system empowers educational institutions and organizations to efficiently
+                                    manage their funds and maximize their impact on students' lives.</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Simplifying Bursary Management/p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Empowering Education Through Efficient Bursary Solutions</p>
+                                    <p><i class="fa fa-check text-primary me-3"></i>Streamlining Bursary Applications & Administration</p>
+                                    <a href="" class="btn btn-primary py-3 px-5 mt-3">Thank you</a>
                                 </div>
                             </div>
                         </div>
@@ -225,48 +229,49 @@
                             <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Get In Touch</p>
                             <h1 class="display-5 mb-5">Request A Call-Back</h1>
                         </div>
-                        <div class="row g-3">
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                    <label for="name">Your Name</label>
+                        <form method="post" action="/projects/Bursary_Fund/send_callback.php">
+                            <div class="row g-3">
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                        <label for="name">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="mail" name="email" placeholder="Your Email" required>
+                                        <label for="mail">Your Email</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Your Mobile" required>
+                                        <label for="mobile">Your Mobile</label>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" required>
+                                        <label for="subject">Subject</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message" name="message" style="height: 100px" required></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="email" class="form-control" id="mail" placeholder="Your Email">
-                                    <label for="mail">Your Email</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="mobile" placeholder="Your Mobile">
-                                    <label for="mobile">Your Mobile</label>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                    <label for="subject">Subject</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                                    <label for="message">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12 text-center">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Submit Now</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Callback End -->
-        
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
@@ -274,9 +279,9 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Our Office</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>65 NAKURU</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+254713869060</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>alexkipchirchir927@gmail.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
@@ -286,11 +291,11 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Services</h4>
-                    <a class="btn btn-link" href="">Financial Planning</a>
-                    <a class="btn btn-link" href="">Cash Investment</a>
-                    <a class="btn btn-link" href="">Financial Consultancy</a>
-                    <a class="btn btn-link" href="">Business Loans</a>
-                    <a class="btn btn-link" href="">Business Analysis</a>
+                    <a class="btn btn-link" href="">Bursary Application</a>
+                    <a class="btn btn-link" href="">Application Tracking</a>
+                    <!-- <a class="btn btn-link" href="">Financial Aid Consultancy</a> -->
+                    <a class="btn btn-link" href="">Scholarship Opportunities</a>
+                    <a class="btn btn-link" href="">Student Support</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Quick Links</h4>
@@ -301,8 +306,8 @@
                     <a class="btn btn-link" href="">Support</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h4 class="text-white mb-4">Newsletter</h4>
-                    <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                    <h4 class="text-white mb-4">your email</h4>
+                    <p>to stay updated</p>
                     <div class="position-relative w-100">
                         <input class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
                         <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
