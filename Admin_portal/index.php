@@ -906,9 +906,8 @@ $declined = mysqli_num_rows($feed);
                     <input type="text" placeholder="Search...">
                 </div>
                 <div class="header-actions">
-                    <button class="action-btn" id="logout-btn" onclick="window.location='../AUTH/logout.php'">
+                    <button class="action-btn" id="logout-btn" onclick="window.location='../AUTH/signin.php';">
                         <i class="fas fa-sign-out-alt"></i>
-                    </button>
                     </button>
                     <!-- <button class="action-btn" id="settings-btn"> -->
                         <!-- <i class="fas fa-cog"></i> -->

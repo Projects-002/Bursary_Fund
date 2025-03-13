@@ -824,7 +824,7 @@ $declined = $result->num_rows;
                                                                     <option value="certificate">Certificate</option>
                                                                     <option value="diploma">Diploma</option>
                                                                     <option value="undergraduate">Undergraduate Degree</option>
-                                                                    <option value="postgraduate">Postgraduate Degree</option>
+                                                                    <!-- <option value="postgraduate">Postgraduate Degree</option> -->
                                                                 </select>
                                                             </div>
                                                             <div class="form-group">
@@ -832,11 +832,11 @@ $declined = $result->num_rows;
                                                                 <input type="text" id="institution" name="institution" class="form-input" required>
                                                             </div>
                                                             <div class="form-group">
-                        </div>
-                        <div class="form-group">
-                        <label class="form-label" for="amount">Amount Requested (KES)</label>
-                        <input type="number" id="amount" name="amount" class="form-input" max="30000" required>
-                        </div> 
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label class="form-label" for="amount">Amount Requested (KES)</label>
+                                                                <input type="number" id="amount" name="amount" class="form-input" max="30000" step="0.0001" required>
+                                                            </div>
                         <!-- <div class="form-group">  -->
                             <!-- <label class="form-label" for="purpose">Purpose of Bursary</label> -->
                             <!-- <textarea id="purpose" class="form-textarea" required></textarea> -->
