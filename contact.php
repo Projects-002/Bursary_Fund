@@ -65,7 +65,7 @@
                     <a href="about.php" class="nav-item nav-link">About</a>
                     <a href="service.php" class="nav-item nav-link">Services</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                       <!-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu border-light m-0">
                             <a href="project.php" class="dropdown-item">Projects</a>
                             <a href="feature.php" class="dropdown-item">Features</a>
@@ -73,7 +73,7 @@
                             <a href="testimonial.php" class="dropdown-item">Testimonial</a>
                             <a href="404.php" class="dropdown-item">404 Page</a>
                         </div>
-                    </div>
+                    </div> -->
                     <a href="contact.php" class="nav-item nav-link active">Contact</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
