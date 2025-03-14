@@ -66,15 +66,15 @@
                     <a href="about.php" class="nav-item nav-link">About</a>
                     <a href="service.php" class="nav-item nav-link">Services</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <a href="contact.php" class="nav-item nav-link">pages</a>
                         <div class="dropdown-menu border-light m-0">
-                            <a href="project.php" class="dropdown-item">Projects</a>
-                            <a href="feature.php" class="dropdown-item">Features</a>
-                            <a href="team.php" class="dropdown-item">Team Member</a>
-                            <a href="testimonial.php" class="dropdown-item">Testimonial</a>
-                            <a href="404.php" class="dropdown-item">404 Page</a>
+                            <!-- <a href="project.php" class="dropdown-item">Projects</a> -->
+                            <!-- <a href="feature.php" class="dropdown-item">Features</a> -->
+                            <!-- <a href="team.php" class="dropdown-item">Team Member</a> -->
+                            <!-- <a href="testimonial.php" class="dropdown-item">Testimonial</a> -->
+                            <!-- <a href="404.php" class="dropdown-item">404 Page</a> -->
                         </div>
-                    </div>
+                    </div> 
                     <a href="contact.php" class="nav-item nav-link">Contact</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
@@ -426,7 +426,7 @@
 
 
     <!-- Callback Start -->
-    <div class="container-fluid callback my-5 pt-5">
+   <!-- <div class="container-fluid callback my-5 pt-5">
         <div class="container pt-5">
             <div class="row justify-content-center">
                 <div class="col-lg-7">
@@ -479,11 +479,11 @@
 
 
     <!-- Projects Start -->
-    <div class="container-xxl py-5">
+    <!--<div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
             <!-- <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Our Projects</p> -->
-                <h1 class="display-5 mb-5">Your All-in-One Bursary Solution</h1>
+             <!--   <h1 class="display-5 mb-5">Your All-in-One Bursary Solution</h1>
             </div>
             <div class="owl-carousel project-carousel wow fadeInUp" data-wow-delay="0.3s">
                 <div class="project-item pe-5 pb-5">
