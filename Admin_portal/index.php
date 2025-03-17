@@ -965,7 +965,7 @@ $declined = mysqli_num_rows($feed);
                 <div class="section-header">
                     <div class="section-title">Recent Applications</div>
                     <div class="section-actions">
-                        <a href="#" id="show-all-btn">Show All</a>
+                        <!-- <a href="#" id="show-all-btn">Show All</a> -->
                     </div>
                 </div>
                 <table class="applications-table">
@@ -975,7 +975,7 @@ $declined = mysqli_num_rows($feed);
                                 <label class="checkbox-container">
                                     <input type="checkbox" id="select-all">
                                     <span class="checkmark"></span>
-                                </label>
+                                
                             </th>
                             <th>Date</th>
                             <th>Applicant ID</th>
