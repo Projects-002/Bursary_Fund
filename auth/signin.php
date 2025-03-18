@@ -356,14 +356,14 @@ if (isset($_POST['reset_password'])) {
                           margin: 30px 0;
                       }
                       .reset-link a {
-                          background-color: #71c55d;
+                          background-color:rgb(93, 129, 197);
                           color: #ffffff;
                           padding: 10px 20px;
                           text-decoration: none;
                           border-radius: 5px;
                       }
                       .reset-link a:hover {
-                          background-color: #5a9c4a;
+                          background-color:rgb(70, 226, 31);
                       }
                       footer {
                           text-align: center;
@@ -396,9 +396,9 @@ if (isset($_POST['reset_password'])) {
                       </div>
                       <footer>
                           <p>Best Regards,</p>
-                          <p><strong>Astra Softwares</strong></p>
-                          <p><a href="https://astrasoft.tech">www.astrasoft.tech</a></p>
-                          <p>info.astrasoft.tech</p>
+                          <p><strong>scholarease</strong></p>
+                          <p><a href="bursary fund</a></p>
+                          <p>bursary fund</p>
                           <p>All rights reserved.</p>
                       </footer>
                   </div>
