@@ -62,20 +62,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto me-auto p-4 p-lg-0 gap-3">
-                    <a href="index.php" class="nav-item nav-link active">Home</a>
-                    <a href="about.php" class="nav-item nav-link">About</a>
-                    <a href="service.php" class="nav-item nav-link">Services</a>
+                    <a href="/projects/Bursary_Fund/index.php" class="nav-item nav-link active">Home</a>
+                    <a href="/projects/Bursary_Fund/about.php" class="nav-item nav-link">About</a>
+                    <a href="/projects/Bursary_Fund/service.php" class="nav-item nav-link">Services</a>
                     <div class="nav-item dropdown">
-                    <a href="contact.php" class="nav-item nav-link">pages</a>
+                        <a href="#" class="nav-item nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu border-light m-0">
-                            <!-- <a href="project.php" class="dropdown-item">Projects</a> -->
-                            <!-- <a href="feature.php" class="dropdown-item">Features</a> -->
-                            <!-- <a href="team.php" class="dropdown-item">Team Member</a> -->
-                            <!-- <a href="testimonial.php" class="dropdown-item">Testimonial</a> -->
-                            <!-- <a href="404.php" class="dropdown-item">404 Page</a> -->
+                            <!-- <a href="/projects/Bursary_Fund/project.php" class="dropdown-item">Projects</a> -->
+                            <!-- <a href="/projects/Bursary_Fund/feature.php" class="dropdown-item">Features</a> -->
+                            <!-- <a href="/projects/Bursary_Fund/team.php" class="dropdown-item">Team Member</a> -->
+                            <!-- <a href="/projects/Bursary_Fund/testimonial.php" class="dropdown-item">Testimonial</a> -->
+                            <!-- <a href="/projects/Bursary_Fund/404.php" class="dropdown-item">404 Page</a> -->
                         </div>
-                    </div> 
-                    <a href="contact.php" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <a href="/projects/Bursary_Fund/contact.php" class="nav-item nav-link">Contact</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
                       <div class="btn btn-primary text-white" onclick="window.location='auth/signin.php'" >Get Started</div>
