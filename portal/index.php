@@ -12,7 +12,6 @@ $username = "root";
 $password = "alex";
 $dbname = "scholarease";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
@@ -20,53 +19,70 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-
-// Check which session variable is set and get the user ID
+// Get logged-in user's ID
 $id = isset($_SESSION['google_auth']) ? $_SESSION['google_auth'] : (isset($_SESSION['github_auth']) ? $_SESSION['github_auth'] : $_SESSION['email_auth']);
 
-// Use prepared statements to prevent SQL injection
 $stmt = $conn->prepare("SELECT * FROM users WHERE SN = ?");
 $stmt->bind_param("i", $id);
 $stmt->execute();
 $result = $stmt->get_result();
 $details = $result->fetch_object();
 
+$profileImage = htmlspecialchars($details->Avatar, ENT_QUOTES, 'UTF-8');
+$fname = htmlspecialchars($details->First_Name, ENT_QUOTES, 'UTF-8');
+$lname = htmlspecialchars($details->Last_Name, ENT_QUOTES, 'UTF-8');
+$email = htmlspecialchars($details->Email, ENT_QUOTES, 'UTF-8');
 
-$profileImage = htmlspecialchars($details->Avatar, ENT_QUOTES, 'UTF-8'); // Sanitize output
-$fname = htmlspecialchars($details->First_Name, ENT_QUOTES, 'UTF-8'); // Sanitize output
-$lname = htmlspecialchars($details->Last_Name, ENT_QUOTES, 'UTF-8'); // Sanitize output
-$email = htmlspecialchars($details->Email, ENT_QUOTES, 'UTF-8'); // Sanitize output
+// ✅ Check if the user already has an application
+$checkQuery = "SELECT COUNT(*) as count FROM applications WHERE email = ?";
+$stmt = $conn->prepare($checkQuery);
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+$row = $result->fetch_assoc();
+$applicationExists = $row['count'] > 0;
 
-
-// get total applications where email = $email
-$sql = "SELECT * FROM applications WHERE email = '$email'";
-$result = $conn->query($sql);
-$applications = $result->num_rows;
-
-
+// 🚨 Debugging Step: Uncomment this to check if the duplicate detection works
+// if ($applicationExists) {
+//     die("Duplicate application detected!");
+// }
 
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $fullName = htmlspecialchars($details->First_Name, ENT_QUOTES, 'UTF-8'); // Sanitize output
-    $email = htmlspecialchars($details->Email, ENT_QUOTES, 'UTF-8');
-    $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
-    $dob = isset($_POST['dob']) ? $_POST['dob'] : '';
-    $gender = isset($_POST['gender']) ? $_POST['gender'] : '';
-    $education = isset($_POST['education']) ? $_POST['education'] : '';
-    $institution = isset($_POST['institution']) ? $_POST['institution'] : '';
-    $amount = isset($_POST['amount']) ? $_POST['amount'] : '0.00';
-    $userType = isset($_POST['userType']) ? $_POST['userType'] : 'student'; // Replace 'student' with a valid default value for user_type
-    $bank = isset($_POST['bank']) ? $_POST['bank'] : '';
-    $branch = isset($_POST['branch']) ? $_POST['branch'] : '';
-    $accountNumber = isset($_POST['accountNumber']) ? $_POST['accountNumber'] : '';
-    $accountName = isset($_POST['accountName']) ? $_POST['accountName'] : '';
+    if ($applicationExists) {
+        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+        echo "<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Duplicate Application',
+                text: 'Email has already been applied.',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                window.location.href = 'index.php';
+            });
+        </script>";
+        exit();
+    }
+
+    // Sanitize input
+    $fullName = htmlspecialchars($details->First_Name, ENT_QUOTES, 'UTF-8');
+    $phone = $_POST['phone'] ?? '';
+    $dob = $_POST['dob'] ?? '';
+    $gender = $_POST['gender'] ?? '';
+    $education = $_POST['education'] ?? '';
+    $institution = $_POST['institution'] ?? '';
+    $amount = $_POST['amount'] ?? '0.00';
+    $userType = $_POST['userType'] ?? 'student';
+    $bank = $_POST['bank'] ?? '';
+    $branch = $_POST['branch'] ?? '';
+    $accountNumber = $_POST['accountNumber'] ?? '';
+    $accountName = $_POST['accountName'] ?? '';
 
     // Handle file uploads
     $national_id = $_FILES['national_id']['name'];
     $death_certificate = $_FILES['death_certificate']['name'];
-    $admission_letter = isset($_FILES['admission_letter']['name']) ? $_FILES['admission_letter']['name'] : '';
+    $admission_letter = $_FILES['admission_letter']['name'] ?? '';
 
-    // Move uploaded files to a directory
     move_uploaded_file($_FILES['national_id']['tmp_name'], "uploads/" . $national_id);
     if ($death_certificate) {
         move_uploaded_file($_FILES['death_certificate']['tmp_name'], "uploads/" . $death_certificate);
@@ -75,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         move_uploaded_file($_FILES['admission_letter']['tmp_name'], "uploads/" . $admission_letter);
     }
 
-    // Insert data into the database
+    // Insert application into the database
     $stmt = $conn->prepare("INSERT INTO applications (full_name, email, phone, dob, gender, education_level, institution, amount_requested, user_type, national_id, death_certificate, admission_letter, bank_name, branch, account_number, account_name) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("ssssssssssssssss", $fullName, $email, $phone, $dob, $gender, $education, $institution, $amount, $userType, $national_id, $death_certificate, $admission_letter, $bank, $branch, $accountNumber, $accountName);
 
@@ -83,51 +99,57 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
         echo "<script>
             Swal.fire({
-            icon: 'success',
-            title: 'Application Submitted',
-            text: 'Your application has been submitted successfully!',
-            confirmButtonText: 'OK'
-            }).then((result) => {
-            if (result.isConfirmed) {
+                icon: 'success',
+                title: 'Application Submitted',
+                text: 'Your application has been submitted successfully!',
+                confirmButtonText: 'OK'
+            }).then(() => {
                 window.location.href = 'index.php';
-            }
             });
         </script>";
+        exit();
     } else {
-        echo "Error: " . $stmt->error;
+        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
+        echo "<script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Submission Error',
+                text: 'There was an error submitting your application. Please try again.',
+                confirmButtonText: 'OK'
+            }).then(() => {
+                window.location.href = 'index.php';
+            });
+        </script>";
+        exit();
     }
-
-    // $conn->close();
 }
 
+// Function to get total applications based on status
+function getApplicationCount($conn, $email, $status = "")
+{
+    $query = "SELECT COUNT(*) as count FROM applications WHERE email = ?" . ($status ? " AND Status = ?" : "");
+    $stmt = $conn->prepare($query);
+    
+    if ($status) {
+        $stmt->bind_param("ss", $email, $status);
+    } else {
+        $stmt->bind_param("s", $email);
+    }
 
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    return $row['count'];
+}
 
-
-// get total  applications where email = $email and Status = 'approved'
-$sql = "SELECT * FROM applications WHERE email = '$email' AND Status = 'approved'";
-$result = $conn->query($sql);
-$approved = $result->num_rows;
-
-
-// get total  applications where email = $email and Status = 'pending'
-$sql = "SELECT * FROM applications WHERE email = '$email' AND Status = 'pending'";
-$result = $conn->query($sql);
-$pending = $result->num_rows;
-
-
-// get total  applications where email = $email and Status = 'declined'
-$sql = "SELECT * FROM applications WHERE email = '$email' AND Status = 'declined'";
-$result = $conn->query($sql);
-$declined = $result->num_rows;
-
-
-
-
-
-
-
+$applications = getApplicationCount($conn, $email);
+$approved = getApplicationCount($conn, $email, 'approved');
+$pending = getApplicationCount($conn, $email, 'pending');
+$declined = getApplicationCount($conn, $email, 'declined');
 
 ?>
+; -->
+
 
     
 
@@ -680,28 +702,24 @@ $declined = $result->num_rows;
                         <i>📋</i> My Applications
                     </a>
                 </li>
-                
-                </li>
-                
-                </li>
                 <li class="nav-item">
                     <a href="logout.php" class="nav-link">
                         <i>🚪</i> Logout
                     </a>
                 </li>
             </ul>
-        </div>
-
-        <!-- Main Content -->
-        <div class="main-content">
-            <div class="header">
-                <div class="hamburger-menu" id="hamburger-menu">☰</div>
-                <h2>Applicant Dashboard</h2>
-                <div class="user-profile">
-                    <img src="<?=$profileImage ?>" alt="User">
-                    <span><?=$fname ?></span>
-                </div>
             </div>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                <div class="header">
+                    <div class="hamburger-menu" id="hamburger-menu">☰</div>
+                    <h2>Applicant Dashboard</h2>
+                    <div class="user-profile">
+                        <img src="<?=$profileImage ?>" alt="User">
+                        <span><?=$fname ?></span>
+                    </div>
+                </div>
 
             <!-- Dashboard Section -->
             <div class="section-content active" id="dashboard">
