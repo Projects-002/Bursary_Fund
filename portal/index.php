@@ -148,7 +148,7 @@ $pending = getApplicationCount($conn, $email, 'pending');
 $declined = getApplicationCount($conn, $email, 'declined');
 
 ?>
-; -->
+
 
 
     
