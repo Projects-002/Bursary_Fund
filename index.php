@@ -61,20 +61,10 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto me-auto p-4 p-lg-0 gap-3">
+                <div class="navbar-nav ms-auto me-5 p-4 p-lg-0 gap-3">
                     <a href="/projects/Bursary_Fund/index.php" class="nav-item nav-link active">Home</a>
                     <a href="/projects/Bursary_Fund/about.php" class="nav-item nav-link">About</a>
                     <a href="/projects/Bursary_Fund/service.php" class="nav-item nav-link">Services</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-item nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu border-light m-0">
-                            <!-- <a href="/projects/Bursary_Fund/project.php" class="dropdown-item">Projects</a> -->
-                            <!-- <a href="/projects/Bursary_Fund/feature.php" class="dropdown-item">Features</a> -->
-                            <!-- <a href="/projects/Bursary_Fund/team.php" class="dropdown-item">Team Member</a> -->
-                            <!-- <a href="/projects/Bursary_Fund/testimonial.php" class="dropdown-item">Testimonial</a> -->
-                            <!-- <a href="/projects/Bursary_Fund/404.php" class="dropdown-item">404 Page</a> -->
-                        </div>
-                    </div>
                     <a href="/projects/Bursary_Fund/contact.php" class="nav-item nav-link">Contact</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
@@ -705,6 +695,31 @@
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+      <style>
+
+
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	left:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
+      </style>
+
+
+
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -717,6 +732,15 @@
 
     <!--  Javascript -->
     <script src="js/main.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<a href="https://api.whatsapp.com/send?phone=+254713869060&text=Hello%20tell%20me%20more%20about%20scholar%20Ease." class="float" target="_blank">
+<i class="fa fa-whatsapp my-float"></i>
+</a>
+
+
 </body>
 
 </html>

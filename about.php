@@ -61,20 +61,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="index.php" class="nav-item nav-link">Home</a>
                     <a href="about.html" class="nav-item nav-link active">About</a>
-                    <a href="service.html" class="nav-item nav-link">Services</a>
-                    <div class="nav-item dropdown">
-                       <!-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu border-light m-0">
-                            <a href="project.html" class="dropdown-item">Projects</a>
-                            <a href="feature.html" class="dropdown-item">Features</a>
-                            <a href="team.html" class="dropdown-item">Team Member</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="404.html" class="dropdown-item">404 Page</a>
-                        </div>
-                    </div> -->
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="service.php" class="nav-item nav-link">Services</a>
+                    <a href="contact.php" class="nav-item nav-link">Contact</a>
                 </div>
                 <div class="d-none d-lg-flex ms-2">
                     <a class="btn btn-light btn-sm-square rounded-circle ms-3" href="">
@@ -99,7 +89,7 @@
             <h1 class="display-3 mb-4 animated slideInDown">About</h1>
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Pages</a></li>
                     <li class="breadcrumb-item active" aria-current="page">About</li>
                 </ol>

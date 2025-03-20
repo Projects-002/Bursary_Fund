@@ -886,7 +886,7 @@ $declined = mysqli_num_rows($feed);
                     <i class="fas fa-user-graduate"></i>
                     <span>Students</span>
                 </li>
-                <li class="menu-item" data-page="reports">
+                <li class="menu-item" onclick="window.location='report.php'">
                     <i class="fas fa-chart-bar"></i>
                     <span>Reports</span>
                 </li>

@@ -50,17 +50,9 @@ $applicationExists = $row['count'] > 0;
 // Handle form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($applicationExists) {
-        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
-        echo "<script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Duplicate Application',
-                text: 'Email has already been applied.',
-                confirmButtonText: 'OK'
-            }).then(() => {
-                window.location.href = 'index.php';
-            });
-        </script>";
+         echo "<script>alert('You already have an application!')</script>";
+        // refresh the page
+        header("Refresh:0");
         exit();
     }
 
@@ -96,30 +88,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssssssssssssssss", $fullName, $email, $phone, $dob, $gender, $education, $institution, $amount, $userType, $national_id, $death_certificate, $admission_letter, $bank, $branch, $accountNumber, $accountName);
 
     if ($stmt->execute()) {
-        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
-        echo "<script>
-            Swal.fire({
-                icon: 'success',
-                title: 'Application Submitted',
-                text: 'Your application has been submitted successfully!',
-                confirmButtonText: 'OK'
-            }).then(() => {
-                window.location.href = 'index.php';
-            });
-        </script>";
+        echo "<script>alert('Application submitted successfully!')</script>";
+        header("Refresh:0");
         exit();
     } else {
-        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>";
-        echo "<script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Submission Error',
-                text: 'There was an error submitting your application. Please try again.',
-                confirmButtonText: 'OK'
-            }).then(() => {
-                window.location.href = 'index.php';
-            });
-        </script>";
+       echo "<script>alert('Error submitting application!')</script>";
+       header("Refresh:0");
         exit();
     }
 }
@@ -853,7 +827,15 @@ $declined = getApplicationCount($conn, $email, 'declined');
                                                             </div>
                                                             <div class="form-group">
                                                                 <label class="form-label" for="amount">Amount Requested (KES)</label>
-                                                                <input type="number" id="amount" name="amount" class="form-input" max="30000" step="0.0001" required>
+                                                                <input type="number" id="amount" name="amount" class="form-input" max="30000" required oninput="checkAmount(this)">
+                                                                <script>
+                                                                function checkAmount(input) {
+                                                                    if (input.value > 30000) {
+                                                                        alert('The maximum amount you can request is 30,000 KES.');
+                                                                        input.value = 30000;
+                                                                    }
+                                                                }
+                                                                </script>
                                                             </div>
                         <!-- <div class="form-group">  -->
                             <!-- <label class="form-label" for="purpose">Purpose of Bursary</label> -->

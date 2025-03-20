@@ -1,3 +1,145 @@
+<?php
+
+require './vendor/autoload.php';
+
+use Dotenv\Dotenv;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+// Load .env file
+$dotenv = Dotenv::createImmutable('./');
+$dotenv->load();
+
+// Send the email with the reset link
+if (isset($_POST['email'])) {
+
+    $mail = new PHPMailer(true);
+    $user_email = $_POST['email'];
+    $name = $_POST['name'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    try {
+        $mail->isSMTP();
+        $mail->Host = 'smtp.gmail.com';
+        $mail->SMTPAuth = true;
+        $mail->Username = $_ENV['GMAIL_USERNAME'];
+        $mail->Password = $_ENV['GMAIL_APP_PASSWORD'];
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 587;
+
+        $mail->setFrom($_ENV['GMAIL_USERNAME'], 'Scholar Ease');
+        $mail->addAddress($user_email, 'Customer');
+        $mail->addReplyTo($_ENV['GMAIL_USERNAME'], 'Scholar Ease');
+
+        $mail->isHTML(true);
+        $mail->Subject = 'Customer Support';
+        $mail->Body = '
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Scholar Ease</title>
+          <style>
+              body {
+                  margin: 0;
+                  padding: 0;
+                  box-sizing: border-box;
+                  font-family: Arial, sans-serif;
+                  font-size: 20px;
+                  line-height: 1.5;
+                  color: #333;
+                  background-color: #f8f9fa;
+              }
+              .container {
+                  max-width: 600px;
+                  margin: 0 auto;
+                  padding: 20px;
+                  background-color: #ffffff;
+                  border-radius: 10px;
+                  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+              }
+              .title {
+                  text-align: center;
+                  margin-bottom: 20px;
+                  font-size: 24px;
+              }
+              .title h1 {
+                  color: #333333;
+              }
+              .content {
+                  margin-bottom: 20px;
+              }
+              .content p {
+                  color: #555555;
+                  line-height: 1.6;
+                  text-align: center;
+              }
+              .reset-link {
+                  text-align: center;
+                  margin: 30px 0;
+              }
+              .reset-link a {
+                  background-color:rgb(93, 129, 197);
+                  color: #ffffff;
+                  padding: 10px 20px;
+                  text-decoration: none;
+                  border-radius: 5px;
+              }
+              .reset-link a:hover {
+                  background-color:rgb(70, 226, 31);
+              }
+              footer {
+                  text-align: center;
+                  color: #777777;
+                  font-size: 15px;
+              }
+              footer p {
+                  margin: 5px 0;
+              }
+              footer a {
+                  color: #007bff;
+                  text-decoration: none;
+              }
+              footer a:hover {
+                  text-decoration: underline;
+              }
+          </style>
+      </head>
+      <body>
+          <div class="container">
+              <div class="title">
+                  <h1>Scholar Ease</h1>
+              </div>
+              <div class="content">
+                  <p>Dear ' . htmlspecialchars($name) . ',</p>
+                  <p>We have received your message with the subject: <strong>' . htmlspecialchars($subject) . '</strong></p>
+                  <p>Message: ' . nl2br(htmlspecialchars($message)) . '</p>
+                  <p>We will get back to you as soon as possible.</p>
+              </div>
+              <footer>
+                  <p>Best Regards,</p>
+                  <p><strong>Scholar Ease Team</strong></p>
+                  <p><a href="https://scholarease.com">scholarease.com</a></p>
+                  <p>All rights reserved.</p>
+              </footer>
+          </div>
+      </body>
+      </html>';
+
+        $mail->AltBody = 'We received a request to reset your password. Click the link to reset your password.';
+
+        $mail->send();
+        echo "<script>alert('Message sent successfully!');</script>";
+    } catch (Exception $e) {
+        echo "<script>alert('Message could not be sent. Mailer Error: {$mail->ErrorInfo}');</script>";
+    }
+}
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -117,7 +259,7 @@
                     <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Contact</p>
                     <h1 class="display-5 mb-4">If You Have Any Query, Please Contact Us</h1>
                     <!--<p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done. <a href="https://htmlcodex.com/contact-form">Download Now</a>.</p> -->
-                    <form>
+                    <form method="POST" action="contact.php" >
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
@@ -151,10 +293,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 450px;">
                     <div class="position-relative rounded overflow-hidden h-100">
-                        <iframe class="position-relative w-100 h-100"
-                         src="https://www.google.com/maps/place/County+Government+Of+Nakuru/@-0.2863126,36.0635513,17z/data=!4m10!1m2!2m1!1snakuru+county+offices+location!3m6!1s0x18298d82ee10d463:0xba3871222f7a43c6!8m2!3d-0.2856506!4d36.0705184!15sCh5uYWt1cnUgY291bnR5IG9mZmljZXMgbG9jYXRpb26SARFnb3Zlcm5tZW50X29mZmljZeABAA!16s%2Fg%2F11csqc234r?entry=ttu&g_ep=EgoyMDI1MDIxMi4wIKXMDSoASAFQAw%3D%3D"
-                        frameborder="0" style="min-height: 450px; border:0;" allowfullscreen="" aria-hidden="false"
-                        tabindex="0"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d12307.813982877655!2d36.061548637751805!3d-0.29140562327820285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sNakuru%20town%20offices!5e0!3m2!1sen!2ske!4v1742459600963!5m2!1sen!2ske" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -244,3 +383,4 @@
 </body>
 
 </html>
+
