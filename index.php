@@ -88,7 +88,7 @@
                                 <div class="col-lg-8">
                                     <p class="d-inline-block border border-white rounded text-primary fw-semi-bold py-1 px-3 animated slideInDown">Welcome to ScholarEase</p>
                                     <h1 class="display-1 mb-4 animated slideInDown">Your Academic Success Is Our Goal</h1>
-                                    <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Explore More</a>
+                                    <!-- <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Explore More</a> -->
                                 </div>
                             </div>
                         </div>
