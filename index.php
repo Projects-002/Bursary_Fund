@@ -40,7 +40,7 @@
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
+   <!-- <div class="container-fluid fixed-top px-0 wow fadeIn" data-wow-delay="0.1s">
         <div class="top-bar row gx-0 align-items-center d-none d-lg-flex">
             <div class="col-lg-6 px-5 text-start">
                 <small><i class="fa fa-map-marker-alt text-primary me-2"></i>65 NAKURU, KENYA</small>
@@ -50,7 +50,7 @@
                 <small><i class="fa fa-envelope text-primary me-2"></i>alexkipchirchir927@gmail.com</small>
                 <small class="ms-4"><i class="fa fa-phone-alt text-primary me-2"></i>+254713869060</small>
             </div>
-        </div>
+        </div> -->
 
         <nav class="navbar navbar-expand-lg navbar-light py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
             <a href="index.php" class="navbar-brand ms-4 ms-lg-0 d-flex align-items-center justify-content-center">
@@ -67,7 +67,7 @@
                     <a href="/projects/Bursary_Fund/service.php" class="nav-item nav-link">Services</a>
                     <a href="/projects/Bursary_Fund/contact.php" class="nav-item nav-link">Contact</a>
                 </div>
-                <div class="d-none d-lg-flex ms-2">
+                <div class="d-none d-lg-flex ms-1">
                       <div class="btn btn-primary text-white" onclick="window.location='auth/signin.php'" >Get Started</div>
                 </div>
             </div>
@@ -571,62 +571,7 @@
     <!-- Team End -->
 
 
-    <!-- Testimonial Start -->
-    <!--<div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
-                <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Testimonial</p>
-                <h1 class="display-5 mb-5">What Our Clients Say!</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.3s">
-                <div class="testimonial-item">
-                    <div class="testimonial-text border rounded p-4 pt-5 mb-5">
-                        <div class="btn-square bg-white border rounded-circle">
-                            <i class="fa fa-quote-right fa-2x text-primary"></i>
-                        </div>
-                        Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
-                    </div>
-                    <img class="rounded-circle mb-3" src="img/testimonial-1.jpg" alt="">
-                    <h4>Client Name</h4>
-                    <span>Profession</span>
-                </div>
-                <div class="testimonial-item">
-                    <div class="testimonial-text border rounded p-4 pt-5 mb-5">
-                        <div class="btn-square bg-white border rounded-circle">
-                            <i class="fa fa-quote-right fa-2x text-primary"></i>
-                        </div>
-                        Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
-                    </div>
-                    <img class="rounded-circle mb-3" src="img/testimonial-2.jpg" alt="">
-                    <h4>Client Name</h4>
-                    <span>Profession</span>
-                </div>
-                <div class="testimonial-item">
-                    <div class="testimonial-text border rounded p-4 pt-5 mb-5">
-                        <div class="btn-square bg-white border rounded-circle">
-                            <i class="fa fa-quote-right fa-2x text-primary"></i>
-                        </div>
-                        Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
-                    </div>
-                    <img class="rounded-circle mb-3" src="img/testimonial-3.jpg" alt="">
-                    <h4>Client Name</h4>
-                    <span>Profession</span>
-                </div>
-                <div class="testimonial-item">
-                    <div class="testimonial-text border rounded p-4 pt-5 mb-5">
-                        <div class="btn-square bg-white border rounded-circle">
-                            <i class="fa fa-quote-right fa-2x text-primary"></i>
-                        </div>
-                        Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat.
-                    </div>
-                    <img class="rounded-circle mb-3" src="img/testimonial-4.jpg" alt="">
-                    <h4>Client Name</h4>
-                    <span>Profession</span>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
+        
 
 
     <!-- Footer Start -->
@@ -637,11 +582,11 @@
                     <h4 class="text-white mb-4">Our Office</h4>
                     <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>65 ,NAKURU, KENYA</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+24713869060</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>alexkipchirchir927@gmail.com</p>
+                    <!-- <p class="mb-2"><i class="fa fa-envelope me-3"></i>alexkipchirchir927@gmail.com</p> -->
                     <div class="d-flex pt-2">
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                        <!-- <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a> -->
                         <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a>
+                        <!-- <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-youtube"></i></a> -->
                         <a class="btn btn-square btn-outline-light rounded-circle me-2" href=""><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
@@ -650,23 +595,22 @@
                     <li><a>Opportunities</a></li>
                     <li><a>realtime tracking</a></li>
                     
-                    <li><a>Secure document submission and verification</a></li>
+                    <!-- <li><a>Secure document submission</a></li> -->
                 
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Quick Links</h4>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <a class="btn btn-link" href="">Our Services</a>
+                    <a class="btn btn-link" href="/projects/Bursary_Fund/about.php">About Us</a>
+                    <a class="btn btn-link" href="/projects/Bursary_Fund/contact.php">Contact Us</a>
+                    <a class="btn btn-link" href="/projects/Bursary_Fund/service.php">Our Services</a>
                     
-                    <a class="btn btn-link" href="">Support</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-4">Announcements</h4>
-                    <p>Stay up-to-date with our latest news and announcements</p>
+                    <p>Stay up-to-date with our announcements</p>
                     <div class="position-relative w-100">
                         <input class="form-control bg-white border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">To stay updated</button>
+                        <button type="button" class="btn btn-primary py-1 position-absolute top-0 end-0 mt-2 me-2">stay updated</button>
                     </div>
                 </div>
             </div>
