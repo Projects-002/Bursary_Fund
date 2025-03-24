@@ -67,9 +67,16 @@
                     <a href="/projects/Bursary_Fund/service.php" class="nav-item nav-link">Services</a>
                     <a href="/projects/Bursary_Fund/contact.php" class="nav-item nav-link">Contact</a>
                 </div>
-                <div class="d-none d-lg-flex ms-1">
-                      <div class="btn btn-primary text-white" onclick="window.location='auth/signin.php'" >Get Started</div>
-                </div>
+               <!-- Desktop Button -->
+<div class="d-none d-lg-flex ms-1">
+    <div class="btn btn-primary text-white" onclick="window.location='auth/signin.php'">Get Started</div>
+</div>
+
+<!-- Mobile Button -->
+<div class="d-flex d-lg-none ms-1">
+    <div class="btn btn-primary text-white w-100 text-center" onclick="window.location='auth/signin.php'">Get Started</div>
+</div>
+
             </div>
         </nav>
     </div>
