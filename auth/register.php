@@ -166,7 +166,7 @@ if (isset($_POST['reg_new'])) {
                           <p>Thank you for your interest in  Scholarease. <br> Your education success success begins here!. <br> Kindly use the following link to register!</p>
                       </div>
                       <div class="register-link">
-                          <a href="http://localhost/projects/bursary_fund/Auth/email_callback.php?token='.urlencode($token).'">Register Now</a>
+                          <a href="http://localhost/projects/Bursary_Fund/auth/Email_Callback.php?token='.urlencode($token).'">Register Now</a>
                           <p>The link expires in 30 minutes</p>
                       </div>
                       <footer>
@@ -243,3 +243,10 @@ if (isset($_POST['reg_new'])) {
     </div>
 </body>
 </html>
+
+
+
+
+
+
+

@@ -391,7 +391,7 @@ if (isset($_POST['reset_password'])) {
                           <p>We received a request to reset your password. <br> Click the link below to reset your password!</p>
                       </div>
                       <div class="reset-link">
-                          <a href="localhost/projects/bursary_fund/auth/reset_password.php?token='.urlencode($token).'">Reset Password</a>
+                          <a href="localhost/projects/bursary_fund app/auth/reset_password.php?token='.urlencode($token).'">Reset Password</a>
                           <p>The link expires in 1 hour</p>
                       </div>
                       <footer>

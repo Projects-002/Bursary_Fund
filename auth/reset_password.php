@@ -50,7 +50,20 @@ if (!isset($_GET['token'])) {
                     $stmt = $conn->prepare($sql);
                     $stmt->bind_param("s", $token);
                     $stmt->execute();
-                    echo "Password reset successful!";
+                    
+                    
+                    echo '
+
+                    <div class="alert alert-success" role="alert">
+                       Password reset successful!  <span class="btn btn-warning" ><a href="../signin.php">Login</a></span>
+                    </div>
+                    
+                    
+                    ';
+                      
+
+
+
                     exit();
                 } else {
                     echo "Password reset failed. Please try again.";

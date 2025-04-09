@@ -682,7 +682,51 @@ $declined = getApplicationCount($conn, $email, 'declined');
                     </a>
                 </li>
             </ul>
-            </div>
+        </div>
+
+        <script>
+            const sidebar = document.getElementById('sidebar');
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+
+            hamburgerMenu.addEventListener('click', () => {
+                sidebar.classList.toggle('active');
+            });
+
+            // Close sidebar when clicking outside on mobile
+            document.addEventListener('click', (e) => {
+                if (!sidebar.contains(e.target) && !hamburgerMenu.contains(e.target)) {
+                    sidebar.classList.remove('active');
+                }
+            });
+        </script>
+
+        <style>
+            @media (max-width: 768px) {
+                .sidebar {
+                    width: 0;
+                    padding: 0;
+                    position: fixed;
+                    z-index: 999;
+                    transition: all 0.3s;
+                    overflow: hidden;
+                }
+
+                .sidebar.active {
+                    width: var(--sidebar-width);
+                    padding: 1.5rem;
+                }
+
+                .main-content {
+                    margin-left: 0;
+                }
+
+                .hamburger-menu {
+                    display: block;
+                    font-size: 1.5rem;
+                    cursor: pointer;
+                }
+            }
+        </style>
 
             <!-- Main Content -->
             <div class="main-content">
